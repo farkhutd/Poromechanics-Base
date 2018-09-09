@@ -1,0 +1,1975 @@
+\documentclass[12pt]{article}
+
+\usepackage{latexsym,amsmath,amscd,amssymb,graphics,cite}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\usepackage{framed}
+%\usepackage[square,authoryear]{natbib}
+\usepackage[colorlinks]{hyperref}
+\usepackage{url}
+\usepackage{cite}
+\usepackage[notref,notcite]{showkeys}
+
+\usepackage[all]{xy}
+
+\newcommand{\bfi}{\bfseries\itshape}
+
+\makeatletter
+
+\@addtoreset{figure}{section}
+\def\thefigure{\thesection.\@arabic\c@figure}
+\def\fps@figure{h, t}
+\@addtoreset{table}{bsection}
+\def\thetable{\thesection.\@arabic\c@table}
+\def\fps@table{h, t}
+\@addtoreset{equation}{section}
+\def\theequation{\thesection.\arabic{equation}}
+\makeatother
+
+
+
+\newcommand{\fe}{\mathfrak{e}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+\newcommand{\fr}{\mathfrak{r}}
+\newcommand{\fs}{\mathfrak{s}}
+\newcommand{\fz}{\mathfrak{z}}
+\newcommand{\fv}{\mathfrak{v}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\pr}{\mbox{pr}}
+
+\newcommand{\pa}{{\partial}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\K}{\mathcal{K}}
+\renewcommand{\L}{\mathcal{L}}
+%\newcommand{\Z}{\mathfrak{Z}}
+\newcommand{\Z}{\mathbf{z}}
+%\def\vvv{\vspace{3ex}}
+%\def\vv{\vspace{2ex}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{answer}[theorem]{Answer}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\numberwithin{theorem}{section}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\DeclareMathOperator*{\Ad}{Ad}
+%\DeclareMathOperator*{\ad}{ad}
+\def\vn{{\vec\nabla}}
+\def\he{h_E}
+\def\ho{h_O}
+\def\ve{v_E}
+\def\vo{v_O}
+\def\ce{c_E}
+\def\co{c_O}
+\def\ae{a_E}
+\def\ao{a_O}
+\def\sio{\psi_O}
+\def\sie{\psi_E}
+\def\fie{\varphi_E}
+\def\fio{\varphi_O}
+%********
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\ba{\begin{array}}
+\def\ea{\end{array}}
+\def\cA{{\mathcal A}}
+\def\cB{{\cal B}}
+\def\cC{{\mathcal C}}
+\def\cD{{\mathcal D}}
+\def\cE{{\mathcal E}}
+\def\cF{{\mathcal F}}
+\def\cG{{\mathcal G}}
+\def\cH{{\mathcal H}}
+\def\cI{{\mathcal I}}
+\def\cJ{{\mathcal J}}
+\def\cK{{\mathcal K}}
+\def\cM{{\mathcal M}}
+\def\cN{{\mathcal N}}
+\def\cO{{\mathcal O}}
+\def\cP{{\mathcal P}}
+\def\cQ{{\mathcal Q}}
+\def\cR{{\mathcal R}}
+\def\cS{{\mathcal S}}
+\def\cT{{\mathcal T}}
+ \def\cU{{\mathcal U}}
+\def\cV{{\mathcal V}}
+\def\cW{{\mathcal W}}
+\def\cX{{\mathcal X}}
+\def\cY{{\mathcal Y}}
+\def\cZ{{\mathcal Z}}
+\def\bOm{\boldsymbol{\Omega}}
+\def\hbOm{\widehat{\boldsymbol{\Omega}}}
+\def\boldeta{\boldsymbol{\eta}}
+\def\brho{\boldsymbol{\rho}}
+\def\bM{{\bf M}}
+\def\hbM{\widehat{{\bf M}}}
+\def\hM{\widehat{M}}
+
+\def\iw{\mbox{\boldmath $i$}\omega}
+\def\bi{\mbox{\boldmath $i$}}
+\def\s{\sigma}
+\def\l{\lambda}
+\def\o{\omega}
+\def\r{\rho}
+\def\L{\Lambda}
+\def\D{\Delta}
+\def\g{\gamma}
+\def\t{\theta}
+\def\m{\mu}
+\def\a{\Omega}
+\def\b{Y}
+\def\e{\epsilon}
+\def\ep{\varepsilon}
+\def\d{\delta}
+\def\n{\nu}
+\def\p{\phi}
+\def\pw{\partial w}
+\def\pt{\partial t}
+\def\px{\partial x}
+\def\pO{\partial\Omega}
+\def\G{\Gamma}
+\def\Ga{\Gamma}
+\def\O{\Omega}
+\def\xtn{\widetilde{x}_n}
+\def\dbR{{\mathop{\rm l\negthinspace R}}}
+
+
+\def\bbC{\Bbb C}
+\def\bbN{\Bbb N}
+\def\bbR{{\bf R}}
+\def\bbT{\Bbb T}
+\def\bbZ{\Bbb Z}
+\def\bbS{\Bbb S}
+\def\bbG{{\Bbb G}}
+\def\bbI{\Bbb I}
+\def\BOU{{\bold U}}
+\def\BOF{{\bold F}}
+\def\BOG{{\bf G}}
+\def\BOH{{\bf H}}
+\def\bob{{\bf b}}
+\def\boc{{\bf c}}
+\def\bog{{\bf g}}
+\def\bof{{\bold f}}
+\def\bou{{\bf u}}
+\def\boh{{\bf h}}
+\def\borho{{\bf p}}
+\def\BOD{{\bf D}}
+\def\BOL{{\bf L}}
+\def\BOB{{\bf B}}
+\def\BOK{{\bf G}}
+\def\bow{{\bf w}}
+\def\bov{{\bf v}}
+\def\boz{{\bf z}}
+\def\bga{{\mbox{\boldmath$\gamma$}}}
+\def\boy{{\bold y}}
+\def\dive{\operatorname{div\/}}
+\def\diit{\text{ {\it div\/} }}
+\def\diag{\mbox{ diag\,}}
+\def\lint{{\int\limits}}
+\def\raw{\rightarrow}
+\def\lraw{\leftrightarrow}
+\def\pa{\partial}
+\def\rarp{{x}}
+\def\bx{{\mathbf {x} }}
+\def\by{{\mathbf {y} }}
+\def\div{\mbox{div}\,}
+\def\epi{\epsilon}
+\def\vare{\varepsilon}
+\def\mum{\nu}
+\def\Dal{{\text{\!\!\!\!\!\!\qed}}}
+\def\eput#1{\put{ #1}}
+\let\<\langle
+\let \>\rangle
+%\def\pr{\par \vskip 10pt}
+\def\skp{\vskip 9pt}
+\def \qq {\pgothfamily q}
+
+
+%\newcommand{\remfigure}[1]{}%TURNS OFF FIGURES
+\newcommand{\remfigure}[1]{#1}%TURNS ON FIGURES
+\newcommand{\rem}[1]{}
+\newcommand{\tphi}{\widetilde{\phi}}
+\newcommand{\tdelta}{\widetilde{\delta}}
+\newcommand{\tI}{\widetilde{I}}
+\newcommand{\tR}{\widetilde{R}}
+\newcommand{\tv}{\widetilde{v}}
+\newcommand{\talpha}{\widetilde{\Omega}}
+\newcommand{\txi}{\widetilde{\xi}}
+\newcommand{\dR}{\dot{R}}
+\newcommand{\dv}{\dot{v}}
+\newcommand{\dmu}{\dot{\mu}}
+\newcommand{\dbeta}{\dot{Y}}
+\newcommand{\dtR}{\dot{\widetilde{R}}}
+\newcommand{\dtv}{\dot{\widetilde{v}}}
+\newcommand{\de}{\delta}
+\newcommand{\rhobar}{\overline{\rho}}
+\newcommand{\kappabar}{\overline{\kappa}}
+\newcommand{\bA}{\boldsymbol{A}}
+\newcommand{\bvarphi}{\boldsymbol{\varphi}}
+\newcommand{\bS}{\boldsymbol{S}}
+\newcommand{\bm}{\boldsymbol{m}}
+\newcommand{\bq}{\boldsymbol{q}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bPsi}{\boldsymbol{\Psi}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bX}{\boldsymbol{X}}
+\newcommand{\bK}{\boldsymbol{K}}
+\newcommand{\bw}{\boldsymbol{w}}
+\newcommand{\bphi}{\boldsymbol{\phi}}
+\newcommand{\br}{\boldsymbol{r}}
+\newcommand{\bGam}{\boldsymbol{\Gamma}}
+\newcommand{\bom}{\boldsymbol{\omega}}
+\newcommand{\bgam}{\boldsymbol{\gamma}}
+\newcommand{\bsigma}{\boldsymbol{\Sigma}}
+\newcommand{\bpsi}{\boldsymbol{\Psi}}
+\newcommand{\bOmega}{\boldsymbol{\Omega}}
+\newcommand{\bbeta}{\boldsymbol{Y}}
+\newcommand{\bxi}{\boldsymbol{\xi}}
+\newcommand{\baa}{\boldsymbol{a}}
+\newcommand{\bb}{\boldsymbol{b}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bF}{\boldsymbol{F}}
+\newcommand{\bG}{\boldsymbol{G}}
+\newcommand{\bU}{\boldsymbol{U}}
+\newcommand{\bd}{\boldsymbol{d}}
+\newcommand{\bV}{\boldsymbol{V}}
+\newcommand{\bQ}{\boldsymbol{Q}}
+\newcommand{\bZ}{\boldsymbol{Z}}
+\newcommand{\bY}{\boldsymbol{Y}}
+\newcommand{\bW}{\boldsymbol{W}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\bPi}{\boldsymbol{\Pi}}
+\newcommand{\bXi}{\boldsymbol{\Xi}}
+\newcommand{\bTheta}{\boldsymbol{\Theta}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+\newcommand{\bT}{\boldsymbol{T}}
+\newcommand{\bN}{\boldsymbol{N}}
+\newcommand{\bkappa}{\boldsymbol{\kappa}}
+\newcommand{\bpi}{\boldsymbol{\pi}}
+\newcommand{\blam}{\boldsymbol{\lambda}}
+\newcommand{\bnu}{\boldsymbol{\nu}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bn}{\mathbf{n}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bchi}{\boldsymbol{\chi}} 
+\newcommand{\inertia}{\mathbb{I}} 
+\newcommand{\mA}{\mathbb{A}}
+\newcommand{\mB}{\mathbb{B}}
+\newcommand{\mJ}{\mathbb{J}}
+\newcommand{\mK}{\mathbb{K}}
+\newcommand{\mD}{\mathbb{D}}
+%Differential Operators
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dd}[2]{\frac{d #1}{d #2}}
+\newcommand{\dede}[2]{\frac{\delta #1}{\delta #2}}
+\newcommand{\prt}{\partial}
+\newcommand{\DD}[2]{\frac{D #1}{D #2}}
+
+
+%Greek Symbols
+\newcommand{\om}{\omega}
+\newcommand{\al}{\Omega}
+\newcommand{\da}{\dagger}
+\newcommand{\ka}{\kappa}
+\newcommand{\ga}{\gamma}
+\newcommand{\Om}{\Omega}
+\newcommand{\sig}{\sigma}
+
+%Brackets
+\newcommand{\lsb}{\left[}
+\newcommand{\rsb}{\right]}
+\newcommand{\lbb}{\left \langle \left\langle}
+\newcommand{\rbb}{\right \rangle\right \rangle}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left \langle}
+\newcommand{\rb}{\right \rangle}
+\newcommand{\lform}[2]{{\big( {#1} \big|\, {#2}\big)}}
+\newcommand{\Lform}[2]{{\Big( {#1} \Big|\, {#2}\Big)}}
+\newcommand{\scp}[2]{{\left\langle {#1}\, , \, {#2}\right\rangle}}
+
+
+%Caligraphic Letters
+\newcommand{\CX}{{\mathcal X}}
+\newcommand{\CO}{{\mathcal O}}
+\newcommand{\CL}{{\mathcal L}}
+\newcommand{\CH}{{\mathcal H}}
+\newcommand{\CA}{{\mathcal A}}
+\newcommand{\CF}{{\mathcal F}}
+\newcommand{\cL}{{\cal L}}
+
+%Useful operators
+\newcommand{\bt}{{\blacktriangle}}
+\newcommand{\di}{{\diamond}}
+
+
+%Set Symbols
+\newcommand{\mR}{{\mathbb{R}}}
+\newcommand{\mC}{{\mathbb{C}}}
+\newcommand{\mH}{{\mathbb{H}}}
+\newcommand{\mCP}{{\mathbb{CP}}}
+\newcommand{\mg}{{\mathfrak g}}
+\newcommand{\mZ}{{\mathbb{Z}}}
+
+
+%Lie Groups/Algebras
+\newcommand{\Ad}{\mbox{Ad}}
+\newcommand{\ad}{\mbox{ad}}
+\newcommand{\msu}{\mathfrak{su}}
+\newcommand{\mse}{\mathfrak{se}}
+\newcommand{\mso}{\mathfrak{so}}
+
+%Misc
+\newcommand{\id}{{\mathrm{id}}\,}
+\newcommand{\ti}{\times}
+\newcommand{\tr}{\mbox{tr}}
+\newcommand{\im}{\mbox{im}}
+\newcommand{\non}{\nonumber\\}
+\newcommand{\con}{\overline}
+\newcommand{\cst}{\text{cst}} 
+\newcommand{\sech}{\text{sech}}
+\newcommand{\bra}[1]{\left \langle #1 \right |}
+\newcommand{\ket}[1]{\left | #1 \right \rangle}
+\newcommand{\hor}{\mbox{Hor}}
+\newcommand{\ver}{\mbox{Ver}}
+
+%\newcommand{\boldeta}{\boldsymbol{\eta}}
+
+\textwidth 6.2 truein
+\oddsidemargin 0 truein
+\evensidemargin .2 truein
+\topmargin -.6 truein
+%\textheight 17 cm
+\textheight 9.1 in
+
+
+%%% Todo
+\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent
+\framebox{\begin{minipage}[c]{0.95 \textwidth}
+\tt #1 \end{minipage}}\vspace{5 mm}\par}
+%%%
+
+%%% TodoDH
+\newcommand{\todoDH}[1]{\vspace{5 mm}\par \noindent
+\framebox{\begin{minipage}[c]{0.95 \textwidth}
+\color{blue}\tt DH: #1 \end{minipage}}\vspace{5 mm}\par}
+%%%
+
+\newcommand{\revision}[2]{\marginpar{#1}\textsf{\textcolor{blue}{#2}}}  %turned off for clean manuscript 
+%\newcommand{\revision}[2]{#2} 
+
+\begin{document}
+\title{Variational approach to poromechanics} 
+\section{Equations of motion in spatial coordinates} 
+\todo{VP: Here, we need to introduce a new variable $v$, determining the pore's volume, and local concentration of pores $c=c(b)$. 
+The Lagrangian is then 
+\begin{equation}\label{Lagr_eulerian}
+\begin{aligned}
+&\delta\int_0^T\left[\ell(u_s,u_f, \rho_s,b,v) - \int_0^L p \Big((Q_0\circ\phi^{-1}) \phi^{-1}_x - \tilde g(b)\Big)dx \right.\\
+&\qquad\qquad \qquad \left.+ \int_0^L \mathsf{f}_s\eta_s dx +  \int_0^L  \mathsf{f}_f\eta_f dx\right]dt=0
+\end{aligned}
+\end{equation}
+or, more explicitly, 
+\begin{equation}\label{Lagr_eulerian_explicit}
+\begin{aligned}
+\ell(u_s,u_f, \rho_s,b,v) = 
+\frac{1}{2} \rho_f^0 c(b) v |\mathbf{u}_f|^2 + 
+\frac{1}{2} \rho_s^0 \alpha(b) |\mathbf{u}_s|^2 -V(b,v)
+\end{aligned}
+\end{equation}
+Here, we introduced the potential energy depending on the volume of the pores, as the pores may be independently 'inflated' to increase the energy. This microscopic energy will not contribute to $b$ and thus needs to be considered separately. In future work, when we consider a fluid with bubbles inside instead of the porous media, we may consider also kinetic energy related to deformation of the pores, or bubbles, \emph{i.e.} terms $\dot v^2$. We can take, in simplest case, $V(b,v)$ being quadratic in deformations
+\begin{equation} 
+\label{V_def} 
+V=\frac{1}{2} \left( \mathbb{J}_{ijkl} (b^{ij}-\delta^{ij}) (b^{kl}-\delta^{kl}) 
++c(b) (v-v_0) \mathbb{M} : (b-\mathbb{I})+K c(b) (v-v_0)^2  \right) 
+\end{equation} 
+which linearizes to 
+\begin{equation} 
+\label{V_def_lin} 
+V \simeq \frac{1}{2} \left( \sigma: \epsilon  
++c(b) (v-v_*) \mathbb{M} : \epsilon+K c(b) (v-v_*)^2  \right) 
+\end{equation} 
+where $v_*$ is the equilibrium value of porosity in the equilibrium state with no fluid pressure. 
+
+Furthermore, we can consider the non-homogeneous media when equations depend on the local directors, say $\mathbf{n}_i$ frozen into the media, obeying the motion 
+\begin{equation} 
+\partial_t \mathbf{n}_i+{\mathcal L}_{\bf u_s} \mathbf{n}_i =\mathbf{0}  \, ,
+\label{n_eq} 
+\end{equation} 
+and consider the deformations $d_i$ along each of the axis as independent variables. This connects the inhomogeneous porous media to Cosserat's media. 
+}
+
+
+TF: We notice, that the formula above should be 
+\[\partial_t g + \div(gu_f) = 0\]
+\[\partial_t c + \div(cu_s) = 0\]
+\[\partial_t \alpha + \div(\alpha u_s) = 0\]
+Equivalently $c$ and density of solid $\alpha$ should be changing according to the similar laws, governed by the motion of solid.
+The first equation is a consequence of continuity law imposed in the restriction.
+The last one comes from the dependence $\alpha = \alpha(b)$ and
+\[\partial_t b + \mathcal{L}_{u_s} b = 0\] and similar situation is for $c.$
+We notice that linearized, these quantities will take the form
+\[\alpha \simeq \alpha_0(1 + \tr \epsilon)^{-1} \simeq \alpha_0 (1 - \tr \epsilon)\]
+\[c \simeq c_0(1 + \tr \epsilon)^{-1} \simeq c_0 (1 - \tr \epsilon)\]
+as this relates to infinitesimal changes of volume.
+\\
+The equations of motion for solid and fluid should take the following form
+\[
+\left\{
+\begin{array}{l}
+\displaystyle\vspace{0.2cm}\partial_t\frac{\delta\ell}{\delta u_f}+ \pounds_{u_f} \frac{\delta\ell}{\delta u_f} = - g \nabla p + \mathsf{f}_f\\
+\displaystyle\vspace{0.2cm}\partial_t\frac{\delta\ell}{\delta u_s}+ \pounds_{u_s} \frac{\delta\ell}{\delta u_s} = \alpha\nabla \frac{\delta\ell}{\delta \alpha} + \left(\frac{\delta\ell}{\delta b}+ vp \frac{\partial c}{\partial b}\right)\diamond b+ \mathsf{f}_s\\
+\displaystyle\partial_t\rho_s+\operatorname{div}(\rho_su_s)=0,\qquad \partial_tb+ \pounds_{u_s}b=0,
+\end{array}\right.
+\]
+For the fluid equation remains the same as we had previously written
+\begin{equation} 
+\partial_t u_f  + u_f \cdot \nabla u_f =   -\frac{1}{\rho_f^0 g} \nabla p  + \frac{1}{\rho_f^0 g} \mathsf{f}_f 
+\end{equation}
+Let us define the following quantity 
+\begin{equation} 
+\label{delta_l_b} 
+\Pi := \dede{\ell}{b} + vp\pp{c}{b} = \frac{1}{2} \rho_s^0  |u_s|^2 \pp{\alpha}{b} +\left(  \frac{1}{2} \rho_f^0  |u_f|^2 + p \right)v \pp{c}{b} -\pp{V}{b} 
+\end{equation} 
+Using this expression, we derive the equations of motion for the solid as 
+\begin{equation} 
+\rho_s^0 \alpha \left( \partial_t u_s + u_s \cdot \nabla u_s \right) =   [\frac{1}{2}\alpha \rho_s^0 \nabla |u_s|^2]  -\Pi : \nabla b -2  \mbox{div} (\Pi \cdot b) + \mathsf{f}_s \,. 
+\label{solid_eq_0}
+\end{equation} 
+We can simplify this equation further noticing that $\pp{c}{b}: \nabla b= \nabla c$, $\pp{\alpha}{b}: \nabla b= \nabla \alpha$, leading to 
+\begin{equation} 
+\begin{aligned} 
+\rho_s^0 \alpha & \left( \partial_t u_s + u_s \cdot \nabla u_s \right) 
+\\& = 
+\pp{V}{b} : \nabla b
+- \frac{1}{2} \rho_s^0  |u_s|^2 \nabla \alpha
++[\frac{1}{2} \alpha \rho_s^0 \nabla |u_s|^2]
+ \\& \quad 
+ -\left(  \frac{1}{2} \rho_f^0  |u_f|^2 + p \right) v\nabla c- \mbox{div} \sigma_p+ \mathsf{f}_s
+\\& = 
+-\nabla \left(v \pp{V}{v} -V \right) + v \nabla \pp{V}{v}
+- \frac{1}{2} \rho_s^0  |u_s|^2 \nabla \alpha
++[\frac{1}{2} \alpha \rho_s^0 \nabla |u_s|^2]
+ \\& \quad 
+ -\left(  \frac{1}{2} \rho_f^0  |u_f|^2 + p \right) v\nabla c- \mbox{div} \sigma_p+ \mathsf{f}_s \,, \mbox{where} 
+ \\ 
+ & \sigma_p:= 2 \Pi \cdot b = 2 \left( \frac{1}{2} \rho_s^0  |u_s|^2 \pp{\alpha}{b} +\left(  \frac{1}{2} \rho_f^0  |u_f|^2 + p \right) v\pp{c}{b} -\pp{V}{b} \right) \cdot b 
+ \end{aligned} 
+\label{solid_eq_1}
+\end{equation} 
+\\
+Extra equation for pore volume
+\begin{equation} 
+\label{Pore_volume_eq} 
+-\frac{\partial V}{\partial v} + \left(\rho_f \frac{u_f^2}{2} + p\right)c = 0
+\end{equation} 
+will close the system that we can analyze to verify the stability of the linear case.
+\\
+Now let assume the linearization of equations with
+\[ u_s = \lambda \mathbf{v} e^{\lambda t + ikx} \]
+\[ u_f = \lambda \mathbf{u} e^{\lambda t + ikx} \]
+\[ g = g_0 + g_1 e^{\lambda t + ikx} \]
+\[ p = p_0 + P e^{\lambda t + ikx} \]
+\[ c = c_0 + c_1 e^{\lambda t + ikx} \]
+\[ \alpha = \alpha_0 + \alpha_1 e^{\lambda t + ikx} \]
+Then continuity equations take the form
+\[g = g_0(1 - i(k\mathbf{u}) e^{\lambda t + ikx})\]
+\[c = c_0(1 - i(k\mathbf{v}) e^{\lambda t + ikx})\]
+\[\alpha = \alpha_0(1 - i(k\mathbf{v}) e^{\lambda t + ikx})\]
+\\
+The momentum equations are simplified to
+\[\rho_f g_0 \lambda^2 \mathbf{u} = - i\mathbf{k} P  + \lambda \mathbb{K}(\mathbf{v} - \mathbf{u})\]
+\[\rho_s^0 \alpha_0 \lambda^2 \mathbf{v} = \left(\pp{V}{\epsilon}\right)_0 : \nabla \epsilon - p_0 v_0 \nabla c - \div \sigma_P + \lambda \mathbb{K}(\mathbf{u} - \mathbf{v})\]
+\\
+We use
+\[b = \mathbb{I} + 2\epsilon + \ldots\] in the linearization. The full expansion of $c$ using incompressibility is
+\[c = c_0 (1 - \tr \epsilon + \tr^2 \epsilon + \ldots) \Rightarrow \pp{c}{b} = \frac{c_0 \mathbb{I}}{2}(-1 + 2\tr \epsilon + \ldots)\] which might be useful.
+\\
+From linearization of $c$ above and $\pp{b}{\epsilon} = 2$ we must have for the linearization of
+\[\sigma_P = 2\left(pv \pp{c}{b} - \pp{V}{b}\right)\cdot b = \left(pvc_0\mathbb{I}(-1+2\tr\epsilon) - \pp{V}{\epsilon}\right)\cdot (\mathbb{I} + 2\epsilon) = (-p_0g_0\mathbb{I}-\mathbb{M}_0)\cdot(\not\mathbb{I}+2\epsilon) +\]
+\[+ 2p_0g_0\mathbb{I}\tr\epsilon - \mathbb{M}_1\epsilon - g_0Pe^{\lambda t + i\mathbf{kX}}\mathbb{I} - p_0v_1c_0\mathbb{I} +\ldots\] where
+\[\mathbb{M}_0+\mathbb{M}_1\epsilon + \ldots = \pp{V}{\epsilon}\Leftarrow V = V_0 + \mathbb{M}_0:\epsilon + \frac12\mathbb{M}_1\epsilon:\epsilon + \ldots\] where $\mathbb{M}_1$ is symmetric 4-tensor and has physical sense of dependence $\sigma = c_{ijkl} \epsilon$ in Hooke's Law, so we call $\mathbb{M}_1 \epsilon =: \sigma.$
+The expression for linearized from above
+\[\nabla c = c_0\mathbf{k(kv)}.\]
+Let's use
+\[\sigma = \lambda \tr \epsilon \mathbb{I} + 2\mu \epsilon\]
+Therefore linearized with $p_0 = 0$ and $\mu = 0$
+\[-\div \sigma_P = \div( 2\mathbb{M}_0\epsilon + \sigma + g_0P\mathbb{I}e^{\lambda t + i\mathbf{kX}}) + p_0(\ldots)\]
+\[= - \frac{E}{2(1+\nu)} \left[\frac{1}{1-2\nu}\mathbf{k}(\mathbf{vk}) + |\mathbf{k}|^2\mathbf{v} +\theta (\mathbf{k}\otimes\mathbf{k})(\mathbf{v-u}) \right]e^{\lambda t + i\mathbf{kX}}\]
+where \[\theta = \frac{2g_0 \zeta(1+\nu)}{E} \]
+
+\todo{If the equilibrium pressure vanishes, \emph{i.e.}, $p_0=0$ then the equation simplifies considerably, as $v_0=v_*$ in \eqref{V_def_lin}. 
+\\
+VP: compute dispersion relation for $p_0=0$ and $\mathbb{M}=\alpha {\rm Id}$}
+
+The linearized momentum equation for the solid can be rewritten as
+\[\rho_s^0 \alpha_0 \lambda^2 \mathbf{v} + \lambda \mathbb{K}(\mathbf{v} - \mathbf{u}) = 
+- [(\mathbf{v}\mathbf{k})\mathbb{M}\mathbf{k} + (\mathbb{M}\mathbf{k}\cdot\mathbf{k})\mathbf{v}] 
+- p_0 g_0 \mathbf{k(kv)} - \div \sigma_P\]
+\[= - \mu[(\mathbf{v}\mathbf{k})\mathbf{k} + |\mathbf{k}|^2\mathbf{v} - 2\div \epsilon] - \frac{E}{2(1+\nu)} \left[\frac{1}{1-2\nu}\mathbf{k}(\mathbf{vk}) + |\mathbf{k}|^2\mathbf{v} +\theta (\mathbf{k}\otimes\mathbf{k})(\mathbf{v-u}) \right]\]
+\[ =
+- 2\mu[(\mathbf{v}\mathbf{k})\mathbf{k} + |\mathbf{k}|^2\mathbf{v} ] - \frac{E}{2(1+\nu)} \left[\frac{1}{1-2\nu}\mathbf{k}(\mathbf{vk}) + |\mathbf{k}|^2\mathbf{v} +\theta (\mathbf{k}\otimes\mathbf{k})(\mathbf{v-u}) \right]\]
+with
+\begin{equation} 
+\epsilon =\frac{ie^{\lambda t + i\mathbf{k\cdot X}}}{2}(\mathbf{v\otimes k + k\otimes v})= \frac{1+\nu}{E}\sigma - \frac{\nu}{E} \,  {\rm Id} \,  {\rm tr} \sigma
+\label{epsilon_disturbances_lambda}
+\end{equation}
+\\
+\[\div  \epsilon =
+-\frac12 [\mathbf{k}(\mathbf{vk}) + |\mathbf{k}|^2\mathbf{v})]e^{\lambda t + i\mathbf{kX}}\]
+If $\mathrm{M} = \mu \mathbb{I}$ and $p_0=0$ then
+\[\rho_s^0 \alpha_0 \lambda^2 \mathbf{v} = 
+- \mu[(\mathbf{v}\mathbf{k})\mathbf{k} + |\mathbf{k}|^2\mathbf{v} - 2\div \epsilon]  + \lambda \mathbb{K}(\mathbf{u} - \mathbf{v}) =
+- 2\mu[(\mathbf{v}\mathbf{k})\mathbf{k} + |\mathbf{k}|^2\mathbf{v} ]  + \lambda \mathbb{K}(\mathbf{u} - \mathbf{v})\]
+
+From the extra equation with pressure \eqref{Pore_volume_eq} we must have
+\[\left(\pp{V}{v}\right)_{\epsilon, 0} = p_0 c_0\]
+and linearization should take the form
+\[(Pc_0 - i(\mathbf{kv})p_0c_0)e^{\lambda t + ikx} = \left(\pp{V}{v}\right)_1 (v - v_0)\] or equivalently
+\[Pc_0 = i(\mathbf{kv})\left(\pp{V}{v}\right)_{\epsilon, 0} + \left(\pp{V}{v}\right)_1 (v - v_0) e^{-\lambda t - ikx}\] 
+but from the linearization of $g / c = v$ above we have
+\[v = g_0/c_0 (1 - i(\mathbf{ku}) + i(\mathbf{kv}))e^{\lambda t + ikx}\]
+i.e.
+\[v - v_0 = \frac{ig_0e^{\lambda t + ikx}}{c_0}(\mathbf{k(v-u)})\]
+so \[P = i\left[(\mathbf{kv})p_0 + \zeta (\mathbf{k(v-u)})\right]\] where we denoted \[\zeta := \left(\frac{\partial^2 V}{\partial v^2}\right)_{\epsilon} \frac{g_0}{c_0^2}.\]
+Now we can use this expression to reduce the whole system to 2 linear equations in $\mathbf{u,\ v}.$ In assumption mentioned above it takes the following form ($6\times6$ matrix)
+\[\left[\lambda^2\left(\begin{array}{cc}
+    \rho_f g_0 \mathbb{I} & 0 \\
+    0 & \rho_s \alpha_0 \mathbb{I}
+\end{array}\right) +
+\lambda \beta
+\left(\begin{array}{cc}
+    \mathbb{I} & -\mathbb{I} \\
+    -\mathbb{I} & \mathbb{I}
+\end{array}\right) +
+\left(\begin{array}{cc}
+    \zeta\mathbf{k}\otimes\mathbf{k} & -\zeta\mathbf{k}\otimes\mathbf{k} \\
+    A & B
+\end{array}\right)
+\right]
+\left(\begin{array}{cc}
+    \mathbf{u} \\
+    \mathbf{v}
+\end{array}\right) = \mathbf{0}
+\]
+with 
+\[A := -g_0 \zeta \mathbf{k}\otimes\mathbf{k}\]
+\[B := -A + 2\mu  (|\mathbf{k}|^2\mathbb{I} + \mathbf{k}\otimes\mathbf{k}) + \frac{E}{2(1+\nu)}\left(\frac{\mathbf{k}\otimes\mathbf{k}}{1-2\nu} + |\mathbf{k}|^2\right)\]
+
+1) Let $\mathbf{u,v} \perp \mathbf{k}$ then the compatibility condition takes the form ($4\times4$ matrix) 
+\[\left[\lambda^2\left(\begin{array}{cc}
+    \rho_f g_0 \mathbb{I} & 0 \\
+    0 & \rho_s \alpha_0 \mathbb{I}
+\end{array}\right) +
+\lambda \beta
+\left(\begin{array}{cc}
+    \mathbb{I} & -\mathbb{I} \\
+    -\mathbb{I} & \mathbb{I}
+\end{array}\right) +
+\left(\begin{array}{cc}
+    0 & 0 \\
+    0 & \left[2\mu  + \frac{E}{2(1+\nu)}\right]|\mathbf{k}|^2\mathbb{I} 
+\end{array}\right)
+\right]
+\left(\begin{array}{cc}
+    \mathbf{u_{\perp}} \\
+    \mathbf{v_{\perp}}
+\end{array}\right) = \mathbf{0}
+\]
+We can set $\bu_\perp$ and $\bv_\perp$ to be parallel to a given vector $\bxi$, \emph{i.e.}, 
+$\bu_\perp=u \bxi$ and $\bv_\perp=v \bxi$, then $\bxi$ and be an arbitrary vector in the plane $\bxi \perp \mathbf{k}$. The eigenvalues have multiplicity 1 and are computed from the $2 \times 2$ matrix
+\[\left[\lambda^2\left(\begin{array}{cc}
+    \rho_f g_0  & 0 \\
+    0 & \rho_s \alpha_0  
+\end{array}\right) +
+\lambda \beta
+\left(\begin{array}{cc}
+    1 & -1 \\
+    -1 & 1
+\end{array}\right) +
+\left(\begin{array}{cc}
+    0 & 0 \\
+    0 & \left[2\mu  + \frac{E}{2(1+\nu)}\right]|\mathbf{k}|^2  
+\end{array}\right)
+\right]
+\left(\begin{array}{c}
+    u \\
+    v
+\end{array}\right) = \mathbf{0}
+\]
+\todo{VP: Can you compute the stability of this $2 \times 2$ matrix please? I get stability if the expression in square brackets is positive, \emph{i.e.}, 
+\[ 
+\left[2\mu  + \frac{E}{2(1+\nu)}\right]\geq 0 \, . 
+\] 
+I get the same result, it is pretty straightforward}
+2) Let $\mathbf{u,v} \parallel \mathbf{k}$ then the compatibility condition takes the form ($2\times2$ matrix) 
+\[\left[\lambda^2\left(\begin{array}{cc}
+    \rho_f g_0 & 0 \\
+    0 & \rho_s \alpha_0
+\end{array}\right) +
+\lambda \beta
+\left(\begin{array}{cc}
+    1 & -1 \\
+    -1 & 1
+\end{array}\right) +
+\left(\begin{array}{cc}
+    \zeta|\mathbf{k}|^2 & -\zeta|\mathbf{k}|^2 \\
+    -g_0\zeta|\mathbf{k}|^2 & (g_0\zeta + 4\mu + \frac{Ez}{2(1+\nu)}) |\mathbf{k}|^2 
+\end{array}\right)
+\right]
+\left(\begin{array}{cc}
+    {u_{\parallel}} \\
+    {v_{\parallel}}
+\end{array}\right) = \mathbf{0}
+\]
+For me it seems that it should be $\mathbb{M} = 0,$ then we will have stability $\forall \zeta \ge 0,\ 0<g_0 < 1$ and 
+\[z:= 1 + \frac1{1-2\nu}.\]
+\todo{VP: Can you write a proof of this fact? Also, it seems that if the above statement is true, the stability will also be true for all $g_0 \zeta + 4 \mu>0$. Maybe in the first equation you need $\mu>0$ too?} 
+We rewrite matrix in non-dimensional form by absorbing 
+\[\lambda \beta \rightarrow \lambda,\ \zeta|\mathbf{k}|^2\rightarrow |\mathbf{k}|^2, \rho_f g_0 \rightarrow \rho_f, \rho_s \alpha_0 \rightarrow \rho_s\]
+\[4\mu + \frac{Ez}{2(1+\nu)} \rightarrow w\zeta\]
+So essentially we have if $\zeta \ne 0$ otherwise we have the situation similar to the previous 
+case, where stability is achieved when $c_2^2 > 0$
+\[\left[\begin{array}{cc}
+   \rho_f \lambda^2 + \lambda + \mathbf{k}^2  & -\lambda -\mathbf{k}^2 \\
+    -\lambda-g_0\mathbf{k}^2 & \rho_s \lambda^2 + \lambda + (g_0 + w)\mathbf{k}^2 
+\end{array}\right]\]
+After computing the determinant I get the following polynomial
+\[(\rho_f\rho_s)\lambda^4 + (\rho_f+\rho_s)\lambda^3 + k^2\lambda^2(\rho_s + \rho_f(g_0 + w)) + \lambda k^2 w + w k^4 =0\]
+Using Hurwitz stability criterion we get
+\[a_0, a_1, a_4 > 0\]
+\[\Delta_2 = (\rho_f+\rho_s)(k^2(\rho_s + \rho_f(g_0 + w)) - \rho_s\rho_s  wk^2  > 0\]
+but 
+\[\Delta_3/(zk^4) = [\Delta_2 zk^2 - (\rho_f+\rho_s)^2 zk^4]/(zk^4)  \]
+\[= \rho_s^2-\rho_s^2+\rho_f\rho_s(1 + g_0 + w - w - 2) + \rho_f^2(g_0 + w - 1) >? 0\]
+that is not always true, but subject to the slightly unusual condition above
+\[\rho_s\alpha_0 (g_0 - 1) + \rho_f g_0(g_0 - 1 + w) > 0.\]
+As $g_0 - 1 < 0$ that means $w = \frac{4\mu}{\zeta} + \frac{Ez}{2\zeta(1+\nu)}$ should be sufficiently large which is true for small $\zeta.$ I did numerical experiment, and it seems to be true.
+\[\frac{\rho_f g_0 w}{1-g_0} > \rho_s \alpha_0 + \rho_f g_0\]
+Negative $\zeta$ would cause much problem unless $\mu << 0.$
+
+
+
+\todo{VP: In above formulas, we can call 
+\[ 2 \left( \pp{V}{b} \right)_0= \left( \pp{V}{\epsilon} \right)_0 = \mathbb{M}\] 
+to be the spatial deformation matrix at equilibrium. The physical meaning is the following: if we take unstressed media, then $\mathbb{M}=0$. For a media that is under uniform equilibrium pressure, $\mathbb{M} \neq 0$. For an isotropic media, the strain and stress from the internal pressure propagate uniformly through space, so $\mathbb{M}=\alpha \mathbb{I}$. From \eqref{V_def_lin}, and \eqref{Pore_volume_eq}, assuming $v=v_*$ at equilibrium, we obtain for isotropic media under equilibrium pressure $p_*$ 
+\begin{equation} 
+\label{equilibrium_cond} 
+c_0 \mathbb{M}: \epsilon + K + p_0 v_0 =0 
+\end{equation} 
+
+}
+
+The principle should read
+\begin{equation}\label{VP_eulerian}
+\begin{aligned}
+&\delta\int_0^T\left[\ell(u_s,u_f, \rho_s,b) - \int_0^L p \Big((Q_0\circ\phi^{-1}) \phi^{-1}_x - \tilde g(b)\Big)dx \right.\\
+&\qquad\qquad \qquad \left.+ \int_0^L \mathsf{f}_s\eta_s dx +  \int_0^L  \mathsf{f}_f\eta_f dx\right]dt=0
+\end{aligned}
+\end{equation}
+where:
+\begin{align*}
+\eta_s=&\delta\psi\circ\psi^{-1},\qquad\eta_f=\delta\phi\circ\phi^{-1}\\
+u_s=&\dot\psi\circ\psi^{-1},\qquad u_f=\dot\phi\circ\phi^{-1}\\
+p(x)=&P(\psi^{-1}(x))\quad\text{in fact the $p$ in \eqref{Darcy_0}}\\
+\rho_s=&(\alpha\circ\psi^{-1})J_\psi^{-1}\;\;\text{mass density of media}\\
+&\text{even if $\alpha(X)=\alpha_0$ is a constant, $\rho_s(x)$ is there in spatial.}\\
+&\text{In 1D it is just $\rho_s= \alpha_0\psi^{-1}_x$ when $\alpha_0$ is a constant}\\
+b(x)=&``\psi^*(G^\sharp)"(x)=``\mathbb{F}\mathbb{F}^T"(x)= \psi_X(\psi^{-1}(x))^2= 1/(\psi_x^{-1})^2\\
+\mathsf{f}_s=& (\mathsf{F}_\psi\circ\psi^{-1})\psi^{-1}_x,\qquad \mathsf{f}_f= (\mathsf{F}_\phi\circ\phi^{-1})\phi^{-1}_x
+\end{align*}
+Here $b(x)$ is the Finger deformation tensor of the solid media. In 1D it is not needed, since it is
+\[
+b(x)= \psi_X(\psi^{-1}(x))^2= 1/(\psi_x^{-1})^2= \frac{\textcolor{red}{(\alpha_0 \circ \psi^{-1})^2}}{\rho_s^2}
+\]
+so it is expressed in terms of $\rho_s(x)$. 
+\todo{\textcolor{red}{VP \& TF: Seems like there is density was missing in the formulas above. Also, as we discussed, $\alpha$ may depend on $b$ explicitly, in which case the formulas will change a bit. We can consider this case later. It sort of follows directly from the general formulas, but the analysis becomes a bit difficult, except for the linear stability. }} 
+
+The constraint $Q(X)=\tilde{Q}(\psi_X(X))$ must be transfered into the spatial domain and is $g(x)=\tilde{g}(\psi_X(\psi^{-1}(x)))$. (I put the tilde to distinguish between the field and its functional expression in terms of $\psi_X$). From covariance principles, in the spatial picture the constraint must be expressed in terms of the Finger deformation tensor $b(x)$.
+
+So the constraint is on $g$ as $g(x)=\tilde g(b(x))$, hence we have the spatial constraint
+\[
+(Q_0\circ\phi^{-1}) \phi^{-1}_x -\tilde g(b)=0.
+\]
+
+In 1D, it can be expressed in terms of $\rho_s$ uniquely, which simplifies a lot the equations. It is interesting to see that in the pure spatial frame the constraint becomes just  $g=g(\rho_s)$, i.e. the fluid mass density is a function of the solid mass density (recall that $g=\rho_{fluid}$)
+\textcolor{red}{
+\todo{VP \& TF: It seems that this condition only works if $\alpha_0 = $const, right? Otherwise, there is a term $\alpha_0 \circ \psi^{-1}(x,t)$: 
+\[ 
+b=\sqrt{\frac{\alpha_0 \circ \psi^{-1}(x,t)}{\rho_f(x,t)}}
+\] 
+} 
+}
+
+
+
+
+In general, we get the equation
+\[
+\left\{
+\begin{array}{l}
+\displaystyle\vspace{0.2cm}\partial_t\frac{\delta\ell}{\delta u_f}+ \pounds_{u_f} \frac{\delta\ell}{\delta u_f} = - g \nabla p + \mathsf{f}_f\\
+\displaystyle\vspace{0.2cm}\partial_t\frac{\delta\ell}{\delta u_s}+ \pounds_{u_s} \frac{\delta\ell}{\delta u_s} = \rho_s\nabla \frac{\delta\ell}{\delta \rho_s} + \left(\frac{\delta\ell}{\delta b}+ p \frac{\partial g}{\partial b}\right)\diamond b+ \mathsf{f}_s\\
+\displaystyle\partial_t\rho_s+\operatorname{div}(\rho_su_s)=0,\qquad \partial_tb+ \pounds_{u_s}b=0,
+\end{array}\right.
+\]
+where we recall that $b$ is $\mathbb{F}\mathbb{F}^T$ and that in 1D $b$ is not needed, as $\rho_s$ is enough. In this case, the second equation is just
+\[
+\partial_t\frac{\delta\ell}{\delta u_s}+ \pounds_{u_s} \frac{\delta\ell}{\delta u_s} =\rho_s\nabla \left( \frac{\delta\ell}{\delta \rho_s} + p \frac{\partial g}{\partial \rho_s}\right)+ \mathsf{f}_s
+\]
+
+Also, the formula for the diamond for $b$ is
+\[
+B\diamond b= - B:\nabla b - 2 \operatorname{div}(B\cdot b ) 
+\]
+In order to compute the diamond, we use the definition of Lie derivative in Cartesian coordinates for $(2,0)$ tensor: 
+\[ 
+\mathcal{L}_\eta b^{ab} = \eta^c \pp{}{x^c} b^{ab} 
+- \pp{\eta^a}{x^c} b^{c b} - \pp{\eta^b}{x^c} b^{a c} 
+\]
+Then, 
+\begin{align} 
+\int B_{ab} \mathcal{L}_\eta b^{a b} \mbox{d} x & = 
+\int B_{ab} \left( \eta^c \pp{}{x^c} b^{ab} 
+- \pp{\eta^a}{x^c} b^{c b} - \pp{\eta^b}{x^c} b^{a c} \right) \mbox{d} x 
+\\ 
+& = - \int \left( B_{ab} \pp{b^{ab}}{x^c} + \pp{}{x^c} 
+\left[ B_{ab} b^{c b} + B_{ab} b^{a c} \right] \eta^c \right) \mbox{d} x 
+\\
+& = 
+\int \left( B: \nabla b + 2 \mbox{div} (B \cdot b ) \right) \cdot \eta \mbox{d} x 
+\end{align} 
+where the last equation is obtained by symmetry $B_{ab}=B_{ba}$ and $b^{ab}=b^{ba}$, and the expression for diamond easily follows. 
+The spatial Lagrangian constructed from \eqref{KE} and \eqref{PE} is in 1D
+\[
+\ell(u_s,u_f, \rho_s)= \frac{1}{2}\rho_s|u_s|^2 + \frac{1}{2}g(\rho_s)|u_f|^2  - V(\rho_s) 
+\]
+It gives, for the solid, the equation
+\begin{align*}
+\rho_s(\partial_t u_s+ u_s\cdot\nabla u_s)&= \rho_s\nabla\left(\frac{\partial g}{\partial \rho_s}( \frac{1}{2}u_f^2+p) - \frac{\partial V}{\partial\rho_s}\right)+ \mathsf{f}_s\\
+&= - \nabla\left( \rho_s\frac{\partial V}{\partial\rho_s}-V - (p+\frac{1}{2}u_f^2)\left( \frac{\partial g}{\partial \rho_s}\rho_s- g \right)\right) + g\nabla (p+\frac{1}{2}u_f^2)+ \mathsf{f}_s
+\end{align*}
+In 3D, we need $b$ and use
+\[
+\ell(u_s,u_f, \rho_s,b)= \frac{1}{2}\rho_s|u_s|^2 + \frac{1}{2}g(b)|u_f|^2  - V(b,\rho_s) 
+\]
+We get, for the solid, the equation
+\begin{align*}
+\rho_s(\partial_t u_s+ u_s\cdot\nabla u_s)&= - \nabla\left( \rho_s\frac{\partial V}{\partial\rho_s}-V\right) - (p+\frac{1}{2}u_f^2)\nabla g - \operatorname{div}\sigma + \mathsf{f}_s
+\end{align*}
+where $\sigma$ is the stress given by
+\[
+\sigma= 2 \left( (p+\frac{1}{2}u_f^2)\frac{\partial g}{\partial b}\cdot b -\frac{\partial V}{\partial b}\cdot b \right)
+\]
+\textcolor{red}{\todo{VP: If $\alpha=\alpha(b)$, then there is an extra term in the momentum equation. Let us neglect it for now. } }
+
+
+\color{magenta} 
+\begin{framed} 
+As is discussed above, let us compute the equations of motion from the Lagrangian 
+\begin{equation} 
+\ell(u_s,u_f, \alpha, g,b)= \int \frac{1}{2}\rho_s^0 \alpha |u_s|^2 + \frac{1}{2} \rho_f^0 g |u_f|^2  - V(b,\alpha) \mbox{d} x 
+\label{Lagr_2}
+\end{equation} 
+I put the integral in the Lagrangian, so we are talking about the true Lagrangian and not its integrand function. Also, usually, the elastic energy will in general not depend explicitly on the effective density $\alpha$, unless there is some large swelling going on. I left it just in case. 
+
+Here $\alpha$ and $g$ are the effective densities of solid and fluid, respectively. They are made non-dimensionless by the prefactors $\rho_s^0$ and $\rho_f^0$. The latter one is the density of fluid, assumed constant; the first one is some reference density of the solid. We also have the identity 
+\begin{equation} 
+\partial_t g + \mbox{div} (gu_f) =0,  \quad \partial_t \alpha + \mbox{div} ( \alpha u_s) =0,
+\label{g_alpha_id} 
+\end{equation} 
+with the corresponding variations 
+\begin{equation} 
+\delta g + \mbox{div} (g \eta_f) =0,  \quad \delta \alpha + \mbox{div} ( \alpha \eta_s ) =0,
+\label{var_g_alpha_id} 
+\end{equation} 
+For example, if the solid is incompressible, we get $\alpha = g_*-g$, but more complex dependencies are possible as well. In general,  $\alpha=\alpha(b)$ and $g=g(b)$, transferred to the spatial frame. 
+Using these identities, we obtain for the fluid equation:  
+\begin{equation} 
+\label{fluid_eq} 
+\partial_t u_f  + u_f \cdot \nabla u_f =   -\frac{1}{\rho_f^0 g} \nabla p  + \frac{1}{\rho_f^0 g} \mathsf{f}_f 
+\end{equation} 
+Let us define the following quantity 
+\begin{equation} 
+\label{delta_l_b} 
+\Pi := \dede{\ell}{b} + p\pp{g}{b} = \frac{1}{2} \rho_s^0  |u_s|^2 \pp{\alpha}{b} +\left(  \frac{1}{2} \rho_f^0  |u_f|^2 + p \right) \pp{g}{b} -\pp{V}{b} 
+\end{equation} 
+Using this expression, we derive the equations of motion for the solid as 
+\begin{equation} 
+\rho_s^0 \alpha \left( \partial_t u_s + u_s \cdot \nabla u_s \right) =  - \rho_s^0 \alpha \nabla \pp{V}{\alpha} -\Pi : \nabla b -2  \mbox{div} (\Pi \cdot b) + \mathsf{f}_s \,. 
+\label{solid_eq_0}
+\end{equation} 
+We can simplify this equation further noticing that $\pp{g}{b}: \nabla b= \nabla g$, $\pp{\alpha}{b}: \nabla b= \nabla \alpha$, leading to 
+\begin{equation} 
+\begin{aligned} 
+\rho_s^0 \alpha & \left( \partial_t u_s + u_s \cdot \nabla u_s \right) 
+\\& = 
+-\nabla \left( \alpha \pp{V}{\alpha} -V \right) 
+- \frac{1}{2} \rho_s^0  |u_s|^2 \nabla \alpha  
+ \\& \quad 
+ -\left(  \frac{1}{2} \rho_f^0  |u_f|^2 + p \right) \nabla g- \mbox{div} \sigma_p+ \mathsf{f}_s \,, \mbox{where} 
+ \\ 
+ & \sigma_p:= 2 \Pi \cdot b = 2 \left( \frac{1}{2} \rho_s^0  |u_s|^2 \pp{\alpha}{b} +\left(  \frac{1}{2} \rho_f^0  |u_f|^2 + p \right) \pp{g}{b} -\pp{V}{b} \right) \cdot b 
+ \end{aligned} 
+\label{solid_eq_1}
+\end{equation} 
+The green minus sign above seems suspicious to me, I think it should be plus to join with the second term. 
+In addition, we have identities \eqref{g_alpha_id} as written above, and also the advection equation for $b$ 
+\begin{equation} 
+\label{b_eq} 
+b_t + \mathcal{L}_{u_s} b = 0 
+\end{equation} 
+which can be written explicitly in coordinates as 
+\begin{equation} 
+\label{b_eq_explicit} 
+\partial_t b^{ab} + u_s \cdot \nabla  b^{ab} - \left(b \cdot \nabla u_s\right) - \left( b \cdot \nabla u_s \right)^T 
+\end{equation} 
+\color{black}
+\end{framed}
+
+\subsection{Approach with thermodynamics to compare with Biot}
+[TF: this is a copy from paper derivation, might contain errors]
+The kinetic energy is given by the following form
+\[KE = \frac12(\rho_{11}\dot{\mathbf{v}}_s^2+2\rho_{12}\dot{\mathbf{v}}_s\dot{\mathbf{v}}_f+\rho_{22}\dot{\mathbf{v}}_f^2)\]
+\[s=Qe+R\epsilon = Q\mathrm{div}\mathbf{v}_s+R\mathrm{div}\mathbf{v}_f\]
+Biot's equations: $\frac{\partial^2}{\partial t^2}(\rho_{11}\mathbf{v}_s+\rho_{22}\mathbf{v}_f)$
+\[\left\{\begin{array}{l}
+-\mathrm{div}\sigma = \rho_{11}\frac{\partial \mathbf{v}_s}{\partial t^2}+\rho_{12}\frac{\partial \mathbf{v}_f}{\partial t^2} + b\frac\partial{\partial t}(\mathbf{v}_s-\mathbf{v}_f) \\
+\nabla (Q\mathrm{div}\mathbf{v}_s+R\mathrm{div}\mathbf{v}_f)=\rho_{12}\frac{\partial \mathbf{v}_s}{\partial t^2}+\rho_{22}\frac{\partial \mathbf{v}_f}{\partial t^2} + b\frac\partial{\partial t}(\mathbf{v}_s-\mathbf{v}_f) 
+\end{array}\right..\]
+
+We have
+\[\frac{\partial l}{\partial u_f} = \rho_{12}\mathbf{u}_s +\rho_{22}\mathbf{u}_f\]
+
+\[\begin{array}{l}\frac{\partial}{\partial t} (\rho_{12}u_s + \rho_{22}u_f) + b(u_s-u_f) = -\nabla P \\
+\frac{\partial}{\partial t} (\rho_{11}u_s + \rho_{12}u_f) - b\frac{\partial}{\partial t}(u_s-u_f)=-p_0\nabla g - \mathrm{div} \sigma \end{array}\]
+
+Continuity of fluid
+\[\partial_t g + \mathrm{div}(gu_f) =0\]
+in linear form is equivalent to
+\[\partial_t (M:\epsilon) + \mathrm{div} (g \partial_t \mathbf{v}_f))  =0\]
+that can be integrated into
+\[M:\epsilon + \mathrm{div}(g\mathbf{v}_f) = f(\vec{x})\]
+\[iM\mathbf{k}\cdot \mathbf{v}_s + i\mathbf{k}\cdot \mathbf{v}_f = f(x)\]
+The expression for
+\[\mathrm{div}\sigma =\frac{E}{2(1+\nu)}\left(\frac{(\mathbf{v}_s\mathbf{k)\cdot k}}{1-2\nu}+\mathbf{v}_s|\mathbf{k}|^2\right)\]
+
+Biot:
+\[\mathbf{v}_s \parallel \mathbf{k},\ \mathbf{v}_f \parallel \mathbf{k}\]
+\[\begin{array}{l}\mathbf{v}_s = \alpha_1\mathbf{e}_1 \\
+\mathbf{v}_f = \beta_1\mathbf{e}_1
+\\
+\mathbf{k} = \mathbf{e}_1 k
+\end{array}\]
+then \[\mathrm{div}\sigma =\frac{Ek^2}{2(1+\nu)}\left(\frac1{1-2\nu}+1\right)\mathbf{v}_s=\frac{Ek^2}{2(1+\nu)}z\alpha_1\mathbf{e}_1.\]
+The linearization of equations takes the form
+\[\lambda^2
+\left(\begin{array}{cc}\rho_{11} & \rho_{12}\\ \rho_{12} & \rho_{22}\end{array}\right)\left(\begin{array}{c}\alpha_1\\ \beta_1\end{array}\right)+
+b\lambda\left(\begin{array}{c}\alpha_1 - \beta_1\\ \beta_1-\alpha_1\end{array}\right) = -
+\left(\begin{array}{c}-\frac{Ek^2}{2(1+\nu)}z\alpha_1\\ -k^2Q\alpha_1 - k^2R\beta_1\end{array}\right)
+\]
+which leads to the following compatibility condition [check the signs]
+\[\mathrm{det}\left[\lambda^2 \overline{\rho} +
+\beta\lambda
+\left(\begin{array}{cc}1 & -1\\ -1 & 1\end{array}\right)+
+\left(\begin{array}{cc}\frac{Ek^2}{2(1+\nu)}z & 0\\ k^2Q & k^2R\end{array}\right)\right]=0\]
+If otherwise $\mathbf{v} \perp \mathbf{k}$ then similarly
+\[\mathrm{det}\left[\lambda^2 \overline{\rho} +
+\beta\lambda
+\left(\begin{array}{cc}1 & -1\\ -1 & 1\end{array}\right)+
+\left(\begin{array}{cc}\frac{Ek^2}{2(1+\nu)} & 0\\ k^2Q & k^2R\end{array}\right)\right]=0\]
+If not for the terms with $Q$ and $R,$ these equations are similar to linearization of our equations.
+\textcolor{blue}{
+So in our equations we have equivalent 
+\[\overline\rho = \mathrm{diag}(\alpha_0, g_0),\ b = \mu\]
+Then $\div \mathbf{v}_s = \mathbf{k\cdot v}_s$
+equations are
+\[-\div \sigma = \alpha_0 \lambda^2 \mathbf{v}_s + \mu\lambda(\mathbf{v}_s-\mathbf{v}_f),\]
+\[-Q \mathbf{k(kv)}_s - R\mathbf{k(kv)}_f = g_0 \lambda^2 \mathbf{v}_f + \mu\lambda(\mathbf{v}_f-\mathbf{v}_s)\]
+The following matrix (first column corresponds to $\mathbf{v}_s$ and second to $\mathbf{v}_f$)
+\[
+\left( 
+\begin{array}{cc}
+%\mathbf{v}_s & \mathbf{v}_f \\
+\alpha_0\lambda^2 \mathbb{I} + \mu\lambda\mathbb{I}+\frac{E}{2(1+\nu)}(\frac{\mathbf{k\otimes k}}{1-2\nu}+k^2\mathbb{I}) & -\mu\lambda \mathbb{I} \\
+-\mu\lambda + Q \mathbf{k\otimes k} & (g_0\lambda^2 + \mu \lambda)\mathbb{I} + R \mathbf{k\otimes k}
+\end{array}
+\right) \]
+If we consider the case $\mathbf{v}_{s,f} \perp \mathbf{k}$ then determinant of the matrix above is similar to stable cubic equation we had before, but it also has an extra root $\lambda = 0.$ Other 4 double roots of all 12 come from $\mathbf{v}_{s,f} \parallel \mathbf{k}$ case. Parameter $Q$ seems to be related to what we had through \[Qk^2\ =_? g_0 s = a_1(x+\mu)+\mu\] if assume $R = 0.$ Then our 
+\[m(k, \lambda)g_0 =_? \frac{Qk^2 - \mu}{\lambda + \mu}\]
+but then how to explain $R \ne 0\ldots.$
+\[\epsilon = \frac12\left(\nabla \mathbf{v}^T+\nabla \mathbf{v}\right) - \frac13\frac{g - g_0}{g_0}\mathbb{I}\]
+}
+
+Our equations: $\mathbf{u}_s = \lambda \mathbf{v}_s,$ $\mathbf{u}_f = \lambda \mathbf{v}_f$
+\[\mathbf{v}_s \parallel \mathbf{k}\times \mathbb{M}\mathbf{k},\ \mathbf{v}_f \parallel \mathbf{k}\times \mathbb{M}\mathbf{k}\]
+
+\[\lambda^2 \overline{\rho} \left(\begin{array}{c}\alpha_1\\ \beta_1\end{array}\right)+
+\beta\lambda
+\left(\begin{array}{cc}1 & -1\\ -1 & 1\end{array}\right)
+\left(\begin{array}{c}\alpha_1\\ \beta_1\end{array}\right)+
+\left(\begin{array}{cc}\frac{Ek^2}{2(1+\nu)} & 0\\ 0 & 0\end{array}\right)+\left(\begin{array}{c}ikP\\ 0\end{array}\right)=0\]
+with $P = 0.$
+If $\mathbf{k} \parallel \mathbb{M}\mathbf{k} \rightarrow$ All normal waves are identical.
+If $\mathbf{k} \not\parallel \mathbb{M}\mathbf{k}$
+\[KE = \frac12(u_s\ u_f)^T\overline{\rho}\left(\begin{array}{c}u_s\\ u_f\end{array}\right)\]
+
+\[\left(\rho_f \nabla \frac{\partial l}{\partial \rho_f}\right) \eta_f,\ 
+\left(\rho_s \nabla \frac{\partial l}{\partial \rho_s}\right) \eta_s\]
+\[\frac{\partial l}{\partial \rho_f} \delta \rho_f = -\frac{\partial l}{\partial \rho_f}\mathrm{div}(\rho_f \eta_f)\]
+\[l=l-\rho_fe(\rho_f, s_f)=l-\epsilon_f(\rho_f, s_f)\]
+\[\rho_f\nabla\frac{\partial l}{\partial \rho_f} \rightarrow -\rho_f\nabla\frac{\partial \epsilon_f}{\partial \rho_f}-s_f\nabla\frac{\partial \epsilon_f}{\partial s_f}=\nabla(\rho_f\frac{\partial \epsilon_f}{\partial \rho_f}+s_f\frac{\partial \epsilon_f}{\partial s_f}-\epsilon)=\nabla p_f^T\]
+$+\mathrm{div} (s_f u_f)\quad \approx \nabla u$
+\[\left\{ \begin{array}{l}
+T_f\frac{\partial s_f}{\partial t} + \alpha(T_f - T_s) = f_fu_s \\
+T_s\frac{\partial s_f}{\partial t} + \mathrm{div}(s_su_s) + \alpha(T_s-T_f) = f_su_s
+\end{array}\right.\]
+\[\left\{ \begin{array}{l}
+\lambda T_f s_f + iks_fu_f + \alpha(T_f-T_s)=0 \\
+\lambda T_s s_s + iks_su_s + \alpha(T_s-T_f)=0
+\end{array}\right.\]
+\[p^T_f = \rho_f\frac{\partial \epsilon_f}{\partial \rho_f}+s_f\frac{\partial \epsilon_f}{\partial s_f}-\epsilon \]
+
+\[T_f = T_0 + \epsilon T_{f,1},\quad
+T_s = T_0 + \epsilon T_{s,1}\]
+\[\left\{ \begin{array}{l}
+\lambda T_0s_f + iks^0_fu_f + \alpha(T_f-T_s) =0 \\
+\lambda T_0s_s + iks^0_su_s + \alpha(T_s-T_f) =0
+\end{array}\right.\]
+
+\[\epsilon_1 = \frac{\partial \epsilon_f}{\partial \rho_f} \rho_{f,1} + \frac{\partial \epsilon_f}{\partial s_f} s_{f,1} \]
+\[(p^T_f)_1=\rho^0_f \frac{\partial^2 \epsilon}{\partial \rho^2_f}\rho_f^1+s_f^0 \frac{\partial^2 \epsilon_f}{\partial s^2_f}s_{f,1}\]
+\[\rho_f^1 = \mathbb{M}\mathbf{k}\cdot\mathbf{v}\quad \mathbf{v} \perp  \mathbb{M}\mathbf{k}\]
+\[\frac\partial{\partial t}s_{f,1}T_0 + \div(s_f^0u_f)+\alpha(T_f-T_s)  = 0\]
+the last term is neglected so
+\[s_{f,1}T_0 + s_f^0\div{\mathbf{v}_f} =0\] with
+\[s_{f,1}=-\frac{s_f^0}{T_0} \div\mathbf{v}_f\]
+\[\left(\frac\partial{\partial t} \frac{\partial l}{\partial u_f} + \ldots\right) = -\nabla p_{Incomp}-\nabla p^T=-\nabla p_{Incomp}+\nabla\frac{\partial^2 \epsilon_f}{\partial s_f^2}\frac{(s^0_f)^2}{T_0}\div\mathbf{v}_f\]
+so we take \[R := \frac{\partial^2 \epsilon_f}{\partial s_f^2}\frac{(s^0_f)^2}{T_0}.\]
+
+\[\alpha(T_f-T_s) = \frac{\partial s_s}{\partial t} + \div(u_ss_s)\]
+\[T_0 \frac{\partial s_f}{\partial t}+\div(u_fs_f)+\frac{\partial s_s}{\partial t} + \div(u_ss_s)=0\]
+\[T_0 s_{f,1}+s^0_f\div(\mathbf{v}_f) + s_{s,1}+s^0_s\div\mathbf{v}_s = 0\]
+\[(p^T_f)_1 = \rho_f^0 \frac{\partial^2 \epsilon}{\partial \rho^2_f}\rho_{f,1}+s^0_f\frac{\partial^2 \epsilon}{\partial s^2_f}s_{f,1}=
+\rho_f^0 \frac{\partial^2 \epsilon}{\partial \rho^2_f}\rho_{f,1}-s^0_f\frac{\partial^2 \epsilon}{\partial s^2_f}[s^0_f\div\mathbf{v}_f+s^0_s\div\mathbf{v}_s+s_{s,1}]\]
+which can be rewritten as
+\[(p^T_f)_1 = \rho_f^0 \frac{\partial^2 \epsilon}{\partial \rho^2_f}\rho_{f,1}-R\div\mathbf{v}_s - Q\div\mathbf{v}_f - Ks_1\] where
+\[R:=\frac{(s^0_f)^2}{T_0}\frac{\partial^2 \epsilon_f}{\partial s_f^2},\ Q:=\frac{s^0_fs^0_s}{T_0}\frac{\partial^2 \epsilon_f}{\partial s^2_f},\ K:=\frac{\partial^2\epsilon_f}{\partial s^2_f}\frac{s_f^0}{T_0}\]
+[it seems that in previous equation we've lost $1/T_0$]
+\[\epsilon_f = \rho_fe(s_f),\ \epsilon_s=\rho_se(s_s,\rho_s)\]
+
+Linearization of thermodynamic equations:
+\[\begin{array}{l}
+\frac\partial{\partial t}\frac{\partial l}{\partial u_f} = -\nabla(p^T_f + \Pi) - b(u_f-u_s) \\
+\frac\partial{\partial t}\frac{\partial l}{\partial u_s} = -\Pi_0 \cdot \nabla g - \nabla p^T_s - \div \sigma_P + b(u_f-u_s)
+\end{array}\]
+\[\partial_t M:\epsilon + g_0 \div ( u_f)=0\]
+where $\Pi$ is lagrange multiplier and $p$ is pressure (Thermodynamic).
+\[T = T(s,\rho), \ \alpha=\frac{s_0}{T_0}\alpha_1\]
+\[\begin{array}{l}
+T_f (\partial_t s_f + \div(s_fu_f)) + \alpha(T_f-T_s) =0 \\
+T_s (\partial_t s_s + \div(s_su_s)) + \alpha(T_s-T_f) =0
+\end{array}\]
+$\mathbf{u}_f, \mathbf{v}_s, s_s, s_f$
+\[T_f - T_s = 
+\frac{\partial T_f}{\partial \rho_f}\rho_f^1
+-\frac{\partial T_s}{\partial \rho_s}\rho_f^2
++\frac{\partial T_f}{\partial s_f}s_f^1
+-\frac{\partial T_s}{\partial s_s}s_s^1\]
+
+fluid:
+\[\lambda (\rho_{12}\partial_t u_s + \rho_{22}\partial_t u_f) = \nabla(R\div \mathbf{v}_s + Q \div\mathbf{v}_f + \Pi + Ks_1) - b(u_f-u_s)\]
+solid:
+\[\lambda (\rho_{11}\partial_t u_s + \rho_{12}\partial_t u_f) = -\nabla p_s^T - \div\sigma_P + b (u_f - u_s) + \alpha(T_s-T_f)\]
+$(\Pi_0 = 0)$
+\[\lambda s_f + \div s_f\mathbf{v}_f =0, \lambda s_s + \div s_s\mathbf{v}_s =0.\]
+
+\[\nabla p_s = \frac{\partial p_s}{\partial \rho_s} \rho_s^1 + \frac{\partial p_s}{\partial s_s} s_s^1\]
+\[T = -\frac{\partial l}{\partial s} = \frac{\partial \epsilon}{\partial s}\]
+\[T_f - T_s = \frac{\partial^2 \epsilon_f}{\partial s^2_f} s_{f,1} + [\frac{\partial^2 \epsilon_f}{\partial s_f}\rho_{f,1}] + \frac{\partial^2 \epsilon_s}{\partial s_s}s_{s,1}+\frac{\partial^2 \epsilon_s}{\partial \rho_f}\]
+\[p_f^1 = [\frac{\partial p_f}{\partial \rho_f}\rho_f^1] + \frac{\partial p_f}{\partial s_f}s_f^1 + \alpha\left(\frac{\partial T_f}{\partial s_f}s_f + [\frac{\partial T_f}{\partial \rho_f}\rho_f^1] + \frac{\partial T_s}{\partial s_s}s_s + \frac{\partial T_s}{\partial \rho_s} \rho_{s,1}\right)\] which simplifies to
+\[p_f^1 = \frac{\partial p_f}{\partial s_f}(-s_f^0 \div \mathbf{v}_f - s_s^0 \div\mathbf{v}_s - s_{s,1})\]
+Using $\mathbf{v}_f,$ $\mathbf{v}_s$ $\Pi = -i \Pi,$ $D := \frac{\partial p_f}{\partial s_f}$
+\[\rho_{12}\lambda^2 \mathbf{v}_s + \rho_{22}\lambda^2\mathbf{v}_f - ik\cdot Ri(\mathbf{kv}_s)-ik\cdot Q i(\mathbf{kv}_f) + k\Pi + D iks_1 - \lambda \mathbb{K}(\mathbf{v}_s-\mathbf{v}_f)\]
+\[\rho_{11}\lambda^2 \mathbf{v}_s + \rho_{12}\lambda^2\mathbf{v}_f + \frac{E}{2(1+\nu)}\left(\frac{k\otimes k}{1-2\nu} + k^2 I\right)\mathbf{v}_s + Mk \cdot \Pi + ik \frac{\partial p_s}{\partial \rho_s}\rho_{s,1} + ik\frac{\partial p_s}{\partial s_s} s_{s,1} =0\]
+$\rho_{s,1} = i\mathbf{k} \mathbf{v}_s$
+\[s_{s,1} + s^0_s ik\cdot u_s + \alpha \left(
+\frac{\partial T_f}{\partial s_f}s_{f,1} +
++\frac{\partial T_f}{\partial \rho_f}\rho_{f,1}
++\frac{\partial T_s}{\partial s_s}s_{s,1}
+-\frac{\partial T_s}{\partial \rho_s}\rho_{s,1}
+\right)\]
+$\rho_{s,1} = \alpha(b).$
+\[p=p(b,s)\]
+\[\partial_t \alpha + \div (u_s \alpha) =0\]
+\[\alpha_1 = ik \cdot \mathbf{v}_s \alpha_0 \]
+\[\delta \alpha = 
+\frac{\partial \alpha}{\partial b} \cdot \delta b +
+\frac{\partial \alpha}{\partial s} \cdot \delta s=\]
+\[\int \frac{\partial l}{\partial \alpha} (\frac{\partial \alpha}{\partial b})\cdot(-\alpha_{\eta_s}b)+\frac{\partial \alpha}{\partial s}\cdot \div (\eta_s s_s)=
+\int (\frac{\partial l}{\partial \alpha}\frac{\partial \alpha}{\partial b})\di b - s_s \nabla \frac{\partial l}{\partial s_s}\]
+To get the matrix representation 
+\[\lambda s_f + ik\lambda \mathbf{v}_f s_f^0 =0 \rightarrow s_{f,1}+  i (k\cdot \mathbf{v})s_f^0 =0\]
+\[\rho_{s,1} = \frac{\partial \alpha}{\partial b}:b_1 + \frac{\partial \alpha}{\partial s} \cdot s_1 = M:\epsilon + \frac{\partial \alpha}{\partial s}\cdot s_{f,1}\]
+\[\left[\begin{array}{ccccc}
+\mathbf{v}_f & \mathbf{v}_s & \Pi & s_f & s_s \\
+\rho_{22}\lambda^2 + \mathbb{K}\lambda + Qk^2 &
+\rho_{12}\lambda^2 - \mathbb{K}\lambda + Rk^2 &
+\mathbf{k} & \mathbf{0} & i\mathbf{k}D_f \\
+\rho_{12}\lambda^2 - \mathbb{K}\lambda &
+\rho_{22}\lambda^2 + \mathbb{K}\lambda 
++ \frac{E}{2(1+\nu)}\left(\frac{\mathbf{k}\otimes\mathbf{k}}{1-2\nu}+ k^2 \mathbb{I}\right)-\rho_0 \frac{\partial p_s}{\partial \rho_s} \mathbf{k}\otimes\mathbf{k}
+&
+\mathbb{M}\mathbf{k} & \mathbf{0} & i\mathbf{k}D_s \\
+g_0\mathbf{k} & (\mathbb{M}\mathbf{k})^T & 0 & 0 & 0 \\
+i\mathbf{k}^T & \mathbf{0}^T & 0 & 1 & 0\\
+\mathbf{0}^T & i\mathbf{k}^T & 0 & 0 & 1
+\end{array}\right]
+\]
+with \[D_{f,s}:= \frac{\partial p_{f,s}}{\partial s_{f,s}}.\]
+If $\mathbf{v}_{f,s} \parallel \mathbf{k} \times \mathbb{M} \mathbf{k}$ then we have $\Pi = 0,$ $s_{f,s} =0$ and 
+\[\left(\begin{array}{cc}
+\rho_{22}\lambda^2 + \mu \lambda + Qk^2 & \rho_{12}\lambda^2 - \mu \lambda + Rk^2 \\
+\rho_{12}\lambda^2 - \mu\lambda & \rho_{22} + \mu \lambda + \frac{E}{2(1 + \nu)}-\rho_0\frac{\partial p_s}{\partial \rho_s}
+\end{array}\right)\]
+
+\subsection{Linear stability analysis} 
+\textcolor{red}{Let
+\[\alpha = dc,\] where $c$ is compression of media, normed for relaxed media $c_0 = 1$ and $d$ is percent of volume that occupies the media. Obviously
+\[d + g = 1.\]
+Omitting some details we can't ignore $d$ in 
+\[V = V(d(\alpha, b), b) = d\frac12 \sigma_{real} : \epsilon_{real}\]
+The Hooke's law is valid for quantities above.
+\[\epsilon_{real} = \frac12(\nabla \mathbf{v} +\nabla \mathbf{v}^T) - \frac13\left(1 - \frac{d}d_0\right) \mathbb{I}\]
+I derived the following linearized result 
+\[\alpha = dc = d\left(1 - \mathrm{tr} \epsilon - \frac{d-d_0}{d_0}\right)\] so to express $d=d(\epsilon(b), \alpha)$ we need to solve quadratic equation
+\[-\frac{d^2}{d_0} + d(2-\mathrm{tr}\epsilon) - \alpha = 0.\]
+The $\epsilon(b)$ above assumed macroscopic.
+Correct solution will show the real dependencies
+$\partial_{\alpha, b} V = ?$
+Also this approach helped me to derive
+\[g = g_0 - \frac{\Delta \alpha}{c_0 = 1} + \alpha_0 \Delta c\] and now making realistic assumption that the last term is negligeable (media is not significantly compressed) we get
+\[g = g_0\left(1 + \frac{1-g_0}{g_0} \mathrm{tr} \epsilon\right)\]
+as $\alpha_0 = d_0$ because initial $c_0 = 1$ and \[\Delta \alpha = - d_0 \mathrm{tr}\epsilon\]
+again this $\epsilon$ is as usually macroscopic.
+Although the latter result, namely 
+\[m \le \frac{1-g_0}{g_0}\] could be derived without even taking a look at new quantities for potential energy.
+}
+
+Let us now show how to proceed with the computation of wave propagation in the porous media. We assume no external forces and posit deformations of solid media $\psi$ to be small
+\begin{equation}{\psi} = \mathbf{x}+\mathbf{v}, \quad \mathbf{v} \rightarrow \mathbf{v}e^{\lambda t + i\mathbf{k\cdot X}},\end{equation} which means $\mathbf{u}_s \rightarrow \lambda \mathbf{v}.$
+The formula for elastic strain $\epsilon$ expressed through elastic stress $\sigma$ by Hooke's law is
+\begin{equation} 
+\epsilon =\frac{ie^{\lambda t + i\mathbf{k\cdot X}}}{2}(\mathbf{v\otimes k + k\otimes v})= \frac{1+\nu}{E}\sigma - \frac{\nu}{E} \,  {\rm Id} \,  {\rm tr} \sigma
+\label{epsilon_disturbances_lambda}
+\end{equation}
+where $E$ is the Young's modulus and $\nu$ is the Poisson ratio. The inversion of \eqref{epsilon_disturbances_lambda} in 3D gives 
+\begin{equation} 
+\sigma(\epsilon) = \frac{E}{1+\nu}\left(\epsilon + \frac{\nu}{1-2\nu} {\rm Id} {\rm tr} \epsilon \right) = 
+ \frac{ie^{\lambda t + i\mathbf{k\cdot X}}E}{2(1+\nu)}\left(\mathbf{v\otimes k + k\otimes v} + {\rm Id}\frac{2\nu( \mathbf{vk})}{1-2\nu} \right)
+ \label{sigma_dist_lambda} 
+\end{equation} 
+Potential (elastic) energy $V(b)$ is given by
+\begin{equation}V(b) = \frac12 \sigma:\epsilon, \quad \frac{\partial V}{\partial b} = \frac{\partial V}{\partial \epsilon}\frac{\partial \epsilon}{\partial b} = \sigma\frac{\partial \epsilon}{\partial b}=\frac12{\sigma}.\end{equation} To compute the latter derivative we use the fact that Finger deformation tensor $b$ is expressed as
+\begin{equation}b(\mathbf{x}) = \mathbb{FF}^T = (\nabla_\mathbf{x} \psi)(\nabla_\mathbf{x} \psi)^T = \mathrm{Id} + 2\epsilon + o(\mathbf{v}) \quad\Rightarrow \frac{\partial b}{\partial \epsilon } = 2.\end{equation}
+
+\todo{VP: I think the coefficient $R$ in Biot can be computed from considering $V=V(b,\alpha)$, that is, the dependence of the potential energy on the local density as well as deformations. We need to assume that at the equilibrium, $\nabla V=0$. Then, 
+\begin{equation} 
+\label{lin_alpha_Valpha} 
+\alpha \pp{V}{\alpha} \simeq \alpha_1 \pp{V}{\alpha}_0 + \alpha_0 \pp{^2 V}{\alpha^2} \alpha_1 + \alpha_0 \pp{^2 V}{\alpha_0 \partial b_0}: b_1  
+\end{equation} 
+with the following conditions 
+\begin{equation} 
+\label{cond_disturbances} 
+b_1 \simeq \frac{1}{2} \epsilon \, , \quad \partial_t \alpha_1 + \mbox{div} \mathbf{u_s} \alpha_0 =0 \, . 
+\end{equation} 
+We then obtain, from \eqref{solid_eq_1}, the following conditions for the wave propagation (assuming $p_0=0$): 
+\begin{equation} 
+\rho_0 \alpha_0 \lambda^2 \mathbf{v} + i \mathbf{k} T \alpha_1 + i \alpha_0 \mathbf{k}^T \mathbb{R}:\epsilon + {\mathcal D}_{\sigma P} - \mathbb{K} (\mathbf{u}-\lambda \mathbf{v}) =0 \, , 
+\label{eq_full_solid} 
+\end{equation} 
+where we have defined 
+\begin{equation} 
+T:= \left. \pp{V}{\alpha} \right|_0 + \alpha_0 \left. \pp{^2 V}{\alpha^2}\right|_0 \, , 
+\quad 
+\mathbb{R}=\left. \pp{^2 V}{\alpha \partial b} \right|_0 \, . 
+\end{equation} 
+In addition, $\alpha_1$ satisfies the linearization of $\partial_t \alpha + \mbox{div} \dot{v}_s \alpha=0$ which can be written as 
+\begin{equation} 
+ \alpha_1 + i   \mathbf{k}^T \mathbf{v} =0  \, , \quad \mbox{or} \quad \lambda =0 \, . 
+\end{equation} 
+The equation for the fluid does not change. The linearized equations then reduce to 
+\begin{equation}
+\left[ 
+\begin{array}{ccc} 
+\rho_f^0g_0\lambda \mathrm{Id} + \mathbb{K} & -\lambda \mathbb{K} & \pm\mathbf{k}\\
+-\mathbb{K}&
+\mathbb{U}
+& \pm\mathbb{M}\mathbf{k}\\
+g_0\mathbf{k}^T & \lambda(\mathbb{M}\mathbf{k})^T & 0
+\end{array} 
+\right] 
+\left[\begin{array}{c} 
+\mathbf{u} \\ \mathbf{v} \\ P
+\end{array} 
+\right]=\mathbf{0} 
+\end{equation}
+where, assuming the symmetry of matrix $\mathbb{R}$, we write 
+\begin{equation} 
+\mathbb{U} = T   \mathbf{k} \otimes \mathbf{k} - \mathbf{k} \otimes \mathbb{R} \mathbf{k}  + \rho_s^0\alpha_0\lambda^2\mathrm{Id}+\lambda\mathbb{K} + \frac{E}{2(1+\nu)}\left(\frac{\mathbf{k\otimes k}}{1-2\nu}+|\mathbf{k}|^2\mathrm{Id}\right) 
+\end{equation} 
+Let us assume that the media is isotropic, so $\mathbb{R}=r \mathbb{I}$, $\mathbb{M} = m \mathbb{I}$, and $\mathbb{K}=\mu \mathbb{I}$ The transversal modes $\mathbf{v} \perp \mathbf{k}$ are unchanged. The longitudinal modes $\mathbf{v} = v \mathbf{k}$ and $\mathbf{u}=\mathbf{k} u$ give the following matrix 
+\begin{equation} 
+\left[ 
+\begin{array}{ccc} 
+\rho_f^0 g_0 \lambda + \mu & - \lambda \mu & 1 
+\\ 
+- \mu & \rho_s^0 \alpha_0 \lambda^2 +(T-r) k^2 + \frac{E к^2}{2 (1+\nu)}z & m 
+\\ 
+g_0 & \lambda m & 0 
+\end{array} 
+\right] 
+\end{equation} 
+I get a quadratic equation for $\lambda$. Can you check if that equation is correct? There are terms reminding of $\mbox{div} \mathbf{v}$, although not quite at the same points where Biot put them. 
+}
+
+
+We linearize equations of fluid and solid motion \eqref{fluid_eq} and \eqref{solid_eq_1} respectively and get the following system
+\begin{equation}\left\{
+\begin{array}{l}\rho_f^0g_0\partial_t \mathbf{u}_f =-\nabla p+\mathbf{f}_f
+,\\ \rho_s^0\alpha_0\partial_t \mathbf{u}_s =-p_0\nabla g - \mathrm{div}\sigma_{P_{\epsilon\rightarrow0}} + \mathbf{f}_s, \end{array}\right.\end{equation} where
+\begin{equation}\sigma_{P_{\epsilon\rightarrow0}} := 2\Pi\cdot b_{\epsilon\rightarrow0} = 2\left(p \frac{\partial g}{\partial b} -  \frac{\partial V}{\partial b}\right)\cdot b_{\epsilon\rightarrow0} = (p\mathbb{M} - \sigma)\cdot b_{\epsilon\rightarrow0} = p\mathbb{M} - \sigma\end{equation} 
+with matrix \begin{equation}\mathbb{M} : = 2 \partial g/\partial b = \partial g/\partial \epsilon\end{equation} and
+\begin{equation}p_0 = \overline{p}, \quad g_0 = \overline{g}.\end{equation}
+The forces are given by 
+\begin{equation}\mathbf{f}_f := \mathbb{K}(\mathbf{u}_s-\mathbf{u}_f), \quad \mathbf{f}_s = -\mathbf{f}_f.\end{equation}
+Continuity equation for fluid in  \eqref{g_alpha_id} allows us to complete the system. We substitute \begin{equation}\mathbf{u}_f = \mathbf{u} \exp({\lambda t + i\mathbf{k}\cdot \mathbf{x})}\quad\mbox{and}
+\quad p = p_0 \mp iP\exp({\lambda t + i\mathbf{k}\cdot \mathbf{x})}\end{equation} into the system above noticing that for small deformations
+\begin{equation}g=g_0 + \mathbb{M}:\epsilon=g_0 + i\mathbf{v}^T\mathbb{M}\mathbf{k}e^{\lambda t + i\mathbf{k\cdot x}}\quad \Rightarrow \nabla g \rightarrow -\mathbf{k}(\mathbf{v}^T\mathbb{M}\mathbf{k})\end{equation}
+\begin{equation}\mathrm{div}\sigma_{P_{\epsilon\rightarrow0}}\rightarrow \mathcal{D}_{\sigma_P}:=\pm P\mathbb{M}\mathbf{k}+\frac{E}{2(1+\nu)}\left(\frac1{1-2\nu}\mathbf{(vk)k+v|k|}^2\right)\end{equation}
+and finally get
+\begin{equation}\left\{
+\begin{array}{l}\rho_f^0g_0\lambda \mathbf{u}=\mp \mathbf{k}P+\mathbb{K}(\lambda\mathbf{v}-\mathbf{u}),\\ \rho_s^0\alpha_0\lambda^2 \mathbf{v}=-\mathcal{D}_{\sigma_P}+p_0\mathbf{k}(\mathbf{v}^T\mathbb{M}\mathbf{k})+\mathbb{K}(\mathbf{u}-\lambda\mathbf{v}) ,\\
+\lambda(\mathbf{v}^T \mathbb{M} \mathbf{k}) + g_0(\mathbf{u}\cdot\mathbf{k})=0.\end{array}\right.\end{equation}
+This system can be rewritten in matrix form as follows
+\begin{equation}
+\left[ 
+\begin{array}{ccc} 
+\rho_f^0g_0\lambda \mathrm{Id} + \mathbb{K} & -\lambda \mathbb{K} & \pm\mathbf{k}\\
+-\mathbb{K}&\rho_s^0\alpha_0\lambda^2\mathrm{Id}+\lambda\mathbb{K} - p_0\mathbf{k}\otimes\mathbb{M}\mathbf{k} + \frac{E/2}{1+\nu}\left(\frac{\mathbf{k\otimes k}}{1-2\nu}+|\mathbf{k}|^2\mathrm{Id}\right) & \pm\mathbb{M}\mathbf{k}\\
+g_0\mathbf{k}^T & \lambda(\mathbb{M}\mathbf{k})^T & 0
+\end{array} 
+\right] 
+\left[\begin{array}{c} 
+\mathbf{u} \\ \mathbf{v} \\ P
+\end{array} 
+\right]=\mathbf{0} 
+\end{equation}
+ To simplify the analysis of eigenvalues we non-dimensionalize the matrix $\mathbb{N}$ by 
+ \begin{equation}
+ \lambda \rightarrow \frac{\lambda}{\rho_f^0g_0},
+ \ \mathbf{k}\rightarrow \frac1{\sqrt{\mathcal{E}\rho_f^0g_0}}\mathbf{k}, \ \mathcal{E}:=\frac{E/2}{1+\nu},\ r:=\frac{\rho_s^0 \alpha_0}{\rho_f^0g_0}, \ \mathbf{v}\rightarrow\mathbf{\rho_f^0g_0v}
+ \end{equation} and it takes the following form 
+\begin{equation}
+\left[ 
+\begin{array}{ccc} 
+\lambda \mathrm{Id} + \mathbb{K} & -\lambda \mathbb{K} & \pm\mathbf{k}\\
+-\mathbb{K}&\alpha\lambda^2\mathrm{Id}+\lambda\mathbb{K} - p_0\mathbf{k}\otimes\mathbb{M}\mathbf{k} + \frac{\mathbf{k\otimes k}}{1-2\nu}+|\mathbf{k}|^2\mathrm{Id} & \pm\mathbb{M}\mathbf{k}\\
+g_0\mathbf{k}^T & \lambda(\mathbb{M}\mathbf{k})^T & 0
+\end{array} 
+\right] 
+\end{equation}
+
+\begin{framed} 
+\color{red}
+VP: It seems to me that for isotropic media, we may have $\mathbb{M}=m {\rm Id}$. The argument is as follows. Suppose we have 
+\[ 
+g=g_0 + \mathbb{M}: \epsilon \, , \quad 
+\epsilon = \frac{i}{2} \left( \mathbf{k} \otimes \mathbf{v} + \mathbf{v} \otimes \mathbf{k} \right)
+\] 
+Then, for a symmetric matrix $\mathbb{M}$
+\[ 
+g=g_0 + i \mathbb{M} \mathbf{k} \cdot \mathbf{v} 
+\] 
+Under rotation of space by a rotation matrix $\mathbb{R}$, $v \rightarrow \mathbb{R} v$, 
+$\mathbf{k} \rightarrow \mathbb{R}\mathbf{k}$, 
+so for the invariance of $g$ we need 
+\begin{equation} 
+\label{M_transform} 
+\mathbb{M} \rightarrow \mathbb{R}^T \mathbb{M} \mathbb{R} \, . 
+\end{equation} 
+If we say that $\mathbb{M}$ should remain the same under any choice of coordinates, which is, under any rotation matrix $\mathbb{M}$, then the condition 
+\[ 
+\mathbb{M} =\mathbb{R}^T \mathbb{M} \mathbb{R}
+\] 
+gives $M=m {\rm Id}$. However, it is also possible that \eqref{M_transform} simply defines how the matrix $\mathbb{M}$ changes under the coordinate transformation. $\mathbb{M}$ is the tensor dual to $\epsilon$, \emph{i.e.}, of the rank $(1,1)$. 
+I can't figure out whether it is simply a definition of tensor or an actual physical requirement. In any case, if $\mathbb{M} \mathbf{k}= \mathbf{k}$ then the analysis simplifies quite a bit.
+
+\color{blue} 
+TF: I agree with argument above, with equality for isotropic media.
+If we consider an isotropic media then
+\[\mathbb{M} = g_0 (m) \mathrm{Id}.\]
+We could also notice that $\mathbb{M}$ can not contain non-zero non-diagonal elements in the following way. If we take, for example  \[\psi(X,t) = X + \mathbf{v},\ \mathbf{v} := tA\mathbf{x},\ A = \left[\begin{array}{ccc}0 & 1 & 0 \\ 1& 0&0\\ 0 &0 &0\end{array}\right]\] 
+then $\epsilon = tA.$ The linearization of porosity can not depend of sign of $t,$ as deformations with different signs are equivalent due to symmetry. If we have corresponding non-zero non-diagonal component $b,$ in $\mathbb{M}$ then porosity $g = g_0(1 \pm 2bt),$ i.e. depends on sign of $t.$ We come to a contradiction.
+
+Isotropic media should have diagonal $\mathbb{M},$ as in any orthonormal coordinate system basis vectors are equivalent in the sense of dependence of porosity on deformations.
+\color{black}
+\end{framed} 
+
+Non-trivial solutions of the system exist when \begin{equation}\mathrm{det}\mathbb{N}(\lambda, \mathbf{k}) = 0.\end{equation} For stability we verify that all linear eigenvalues have non-positive real parts. First, assume \begin{equation}\mathbf{u} = u (\mathbb{M}\mathbf{k} \times \mathbf{k}),\ \mathbf{v} = v (\mathbb{M}\mathbf{k} \times \mathbf{k}),\ u^2+v^2\ne 0\end{equation} Then the last equation is trivially satisfied and from first two equations we notice $P=0.$ The system now is 
+\begin{equation}
+\mathbb{N}_0 \left[\begin{array}{c} 
+u \\ v
+\end{array} 
+\right]=
+\left[ 
+\begin{array}{cc} 
+\lambda + \mu & -\lambda\mu \\
+-\mu & \alpha\lambda^2 + \lambda\mu+k^2
+\end{array} 
+\right] 
+\left[\begin{array}{c} 
+u \\ v
+\end{array} 
+\right]=\mathbf{0} 
+\end{equation}
+ \begin{equation}\label{cubic_stability_1} \mathrm{det}\mathbb{N}_0 =
+ \alpha\lambda^3 + (1+\alpha)\mu\lambda^2 + k^2\lambda + \mu k^2\end{equation}
+ is a stable polynomial as Hurwitz criterion
+ \begin{equation}a_0 > 0,\ a_1 > 0,\ a_1a_2-a_0a_3 > 0\end{equation}
+ is satisfied.
+
+We can choose an orthonormal basis $\{\mathbf{e}_i\}_{i=1\ldots3}$ such that
+\begin{equation}\mathbf{e}_1 = \frac{\mathbf{k}}{|\mathbf{k}|}\end{equation}
+\begin{equation}\mathbf{e}_2 \perp \mathbf{e}_1, \ \mathrm{span}(\mathbb{M}\mathbf{k}, \mathbf{k}) \subseteq \mathrm{span}(\mathbf{e}_1,\mathbf{e}_2)
+\end{equation}
+\begin{equation}\mathbf{e}_3 = \mathbf{e}_1 \times \mathbf{e}_2\end{equation} then
+\begin{equation}\mathbb{M}\mathbf{k} =a_1 |\mathbf{k}|\mathbf{e}_1 + a_2 |\mathbf{k}|\mathbf{e}_2
+\end{equation}
+
+To investigate the behaviour of the rest 5 roots let consider solutions of the following form
+\begin{equation}\mathbf{u} = u_1 \mathbf{|k|e}_1 + u_2 \mathbf{|k|e}_2, \ \quad \mathbf{v} = v_1 \mathbf{|k|e}_1 + v_2 \mathbf{|k|e}_2, \ P = P_0
+\end{equation}
+The linear span of such solutions is invariant and matrix $\mathbb{N}_{\mathbf{e}_{12}}$ acting on it has the following representation  
+
+\[[P\cdot k = P |k| e_1,\ P\cdot \mathbb{M}k = P (a_1 |k|e_1 + a_2 |k|e_2),\ k \cdot \mathbb{M}k = |k|^2 a_1]\]
+
+\begin{equation}
+\mathbb{N}_{\mathbf{e}_{12}} = \left[\begin{array}{ccccc} 
+(x+\mu) & 0 & -\mu x & 0 & 1 \\
+0 & (x+\mu) & 0 & -\mu x & 0 \\
+-\mu & 0 & \alpha x^2 + \mu x+k^2(z-a_1p_0) & -a_2k^2p_0 & a_1 \\
+0 & -\mu & 0 & \alpha x^2 + \mu x+k^2 & a_2 \\
+g_0 & 0 & xa_1 & xa_2 & 0
+\end{array} 
+\right]
+\end{equation}
+
+ where $z := 1+\frac1{1-2\nu}$ and $k := \mathbf{|k|}.$ 
+
+Let consider the simplest case of isotropic media, where porosity is given by
+\[g = g_0 +  \mathbb{M}:\epsilon, \ \mathbb{M}=g_0m\mathrm{Id}.\]
+Then we have the following matrix 
+\begin{equation}
+\mathbb{N}_{\mathbf{e}_{12}} = \left[\begin{array}{ccccc} 
+(x+\mu) & 0 & -\mu x & 0 & 1 \\
+0 & (x+\mu) & 0 & -\mu x & 0 \\
+-\mu & 0 & \alpha x^2 + \mu x+k^2(z-a_1p_0) & 0 & a_1 \\
+0 & -\mu & 0 & \alpha x^2 + \mu x+k^2 & 0 \\
+g_0 & 0 & xa_1 & 0 & 0
+\end{array} 
+\right]
+\end{equation} with $a_1 = g_0 m.$
+
+Columns 2 and 4 in it fail to be linearly independent, if
+\[(x+\mu)(\alpha x^2 + \mu x + k^2) - \mu^2 x =0\] which is the same equation as \eqref{cubic_stability_1} derived above. This polynomial, as we discussed, is stable.  
+
+The rest of the roots can be found by investigating linear independence of rows 1, 3 and 5 as follows: take 
+\begin{equation}\frac{x+\mu}{-\mu + g_0s} = \frac{-\mu x}{\alpha x^2+\mu x + k^2(z-a_1p_0)+xa_1s} = \frac1{a_1}\label{indep135} 
+\end{equation} which yields
+\begin{equation}a_1(x+\mu) = -\mu + g_0s \rightarrow g_0s = a_1(x+\mu) + \mu
+\end{equation} we substitute this expression for $s$ into the rightmost equality in \eqref{indep135} and get
+\begin{equation}
+(\alpha + a_1m)x^2 + x\mu((m-1)a_1 + (m+1)) + k^2(z-a_1p) = 0
+\label{poly2}
+\end{equation}
+this polynomial is stable if 
+\[(m-1)mg_0 + (m+1)>0\] and
+\[z - a_1 p > 0\]
+We found that all the roots of \eqref{disp_eq_1} are described by stable polynomials \eqref{poly1} and \eqref{poly2} therefore the wave propagation is dissipative.
+\todo{VP: compute the roots numerically and compare with Biot}
+
+\color{black} 
+
+
+\begin{framed}
+\paragraph{Link between spatial forces and $F_v$, $F_{pm}$.}
+The link between the spatial forces $\mathsf{f}_s(x)$, $\mathsf{f}_f(x)$ and the forces $F_{pm}(X)$ and $F_v(X)$ is
+\begin{equation}\label{transform_f}
+\mathsf{f}_s+\mathsf{f}_f= (F_{pm}\circ\psi^{-1})\psi^{-1}_x,\quad \mathsf{f}_f=(F_v\circ\psi^{-1})\psi_x^{-1}\psi_x^{-1}.
+\end{equation}
+The double appearance of $\psi_x^{-1}$ makes sense, because in 3D this formula is
+\[
+\mathsf{f}_f= T_x^*\psi^{-1}\cdot (F_v\circ \psi^{-1})J_\psi^{-1}
+\]
+which makes sense because we transport a one-form density.
+\medskip
+
+If we have only the Darcy law, then $\mathsf{f}_s+\mathsf{f}_f=0$ so $F_{pm}=0$ (do you agree?).
+
+\medskip
+
+(1) When $F_v= Q \pp{P}{X}$ holds, we have
+\begin{align*}
+-\mathsf{f}_s=\mathsf{f}_f&=(F_v\circ\psi^{-1})\psi_x^{-1}\psi_x^{-1}= \left(Q \pp{P}{X} \circ\psi^{-1}\right)\psi_x^{-1}\psi_x^{-1}\\
+&=(Q\circ\psi^{-1})  \psi_x^{-1}\left(\pp{P}{X} \circ\psi^{-1}\right)\psi_x^{-1} = g\frac{\partial p}{\partial x}.
+\end{align*}
+This makes a lot of sense: $Q \pp{P}{X}$ is transported to $g\frac{\partial p}{\partial x}$, where we recall that $g$ is the spatial fluid density  and $p(x)=P(\psi(X))$ is the spatial pressure (a scalar function).
+
+\medskip
+
+
+(2) However, from $F_v=-\mu U$, we get
+\[
+\mathsf{f}_f= - (\mu \circ \psi^{-1})(\psi^{-1}_x)^3(u_f-u_s),
+\]
+where we used $(\psi_XU)\circ\psi^{-1}=u_f-u_s$. This seems strange, but in fact makes sense because $\mu$, geometrically, cannot be a scalar, because it associates to the vector field $U$ the one-form density $F_v$. So, $\mu$ is some sort of $(1,1)$ tensor density it seems.
+
+I am surprised that $\mathsf{f}_f$ doesn't take a simple form.
+
+
+\medskip
+
+
+In fact we have the following situation: either
+\[
+F_v(X)= -\mu(X) U(X) \quad\text{and}\quad \mathsf{f}_f(x)= - \mu (\psi^{-1}(x))(\psi^{-1}_x)^3(u_f(x)-u_s(x))
+\]
+or
+\[
+\mathsf{f}_f(x)= - \lambda(x) (u_f(x)-u_s(x)) \quad\text{and}\quad F_v(X)= -\lambda(\psi(X))\psi_X^3 U(X)
+\]
+Which one to choose seems a nontrivial question, it means that necessarily in one of the representation, either the spatial or the other one, the Darcy force will depend on gradient of $\psi$ (e.g. through mass densities). But which one is the correct one?
+It seems that people always considered Darcy in the spatial picture $\mathsf{f}_f= - \lambda (u_f-u_s)$. (this seems also consistent with thermodynamics, see below).
+
+
+
+The transformation \eqref{transform_f} from $F_v$ to $\mathsf{f}_f$ seems correct since it does indeed transform $Q(X)\frac{\partial P}{\partial X}(X)$ into $g(x)\frac{\partial p}{\partial x}(x)$.
+Maybe the 3D case will help.
+\todo{VP\& TF: 
+\textcolor{red}{We think the second case makes more sense, at least from historical perspective. 
+We can state something slightly more general: in 3D, the friction force is 
+\begin{equation} 
+\mathbf{f}_f=- \mathbf{f}_s = \mathbb{K}_s \left(\mathbf{u}_s - \mathbf{u}_f \right) 
+\label{Darcy0}
+\end{equation} 
+where $\mathbb{K}_s$ is an operator mapping vector fields to 1-form densities in the spatial frame. Then, we get $\mathbf{F}_{pm} =0$.  
+The operator $\mathbb{K}_s$ should be positive definite, i.e., 
+\[ 
+ \left<  \mathbb{K}_s \left(\mathbf{u}_s - \mathbf{u}_f \right) \, , \left(\mathbf{u}_s - \mathbf{u}_f \right) \right> \geq 0 \, . 
+\] 
+where the pairing between v.f. and 1-form densities includes  integration over the volume. This also answers questions about the form of $K$ in the box above. The equation for $\mathbf{F}_{pm}$ is a bit complicated, and computed as follows. If we compose \eqref{Darcy0} with $\bpsi$, and note that $\mathbf{u}_s-\mathbf{u}_f=\mathbf{U} \cdot \nabla \bpsi$, and multiply by $\mathbb{F}$, we obtain 
+\[ 
+\mathbf{F}_f = J_{\bpsi} \mathbb{F} \mathbb{K} \left( \mathbf{U} \cdot \nabla \bpsi \right)  \, , \quad \mathbb{K}:= \mathbb{K}_s \circ \bpsi \, . 
+\] 
+This is consistent with $F_v(X)= -\lambda(\psi(X))\psi_X^3 U(X)$ derived above. I think it actually makes sense to define $\mathbb{K}_s = \mathbb{K} \circ \bpsi^{-1}$, since the values of porosity depend on the material position, not absolute position in space. A more detailed model will say something like 
+\[ 
+\mathbb{K}_s = \mathbb{K}(\mathbf{F}^T \mathbf{F}) \circ \bpsi^{-1}
+\] 
+since porosity can depend on deformations. This is a bit confusing, I must say... I think at the first step, let us take $\mathbb{K}$ to be a constant. 
+}
+}
+\end{framed}
+\color{black}
+
+\paragraph{Energy conservation} 
+Let us now study the energy evolution of the system \eqref{eqs_full}. For any Lagrangian $L(\psi_t,\psi_X,u)$, define 
+\begin{equation}
+E:= \int \left( \psi_t \pp{L}{\psi_t} + U \pp{L}{U} - L \right) \mbox{d} X 
+\label{Energy_def} 
+\end{equation} 
+Then, the rate of change of energy $E$ is computed as 
+\begin{align*} 
+\dot E & = \int \left( \psi_{tt} \pp{L}{\psi_t} + \psi_t \pp{}{t} \pp{L}{\psi_t}
++ U_t \pp{L}{U} + U \pp{}{t} \pp{L}{U} - \pp{L}{\psi_t} \psi_{tt} - \pp{L}{\psi_X} \psi_{Xt} - \pp{L}{U} U_t  
+\right) \mbox{d} X 
+\\ 
+& = \int  
+-\psi_t \left(  \partial_X \pp{L}{\psi_X} + \partial_X \left( P \pp{Q}{\psi_X} \right) - F_{pm}\right) 
+- U \left(  U \partial_X \pp{L}{U} + 2 \pp{L}{U} \partial_X U  + Q \pp{P}{X} + \mu U \right) \mbox{d} X 
+\\ 
+& = \int \left(  - \mu U^2 + F_{pm}   \psi_t + P \left( \pp{Q}{\psi_X}  \psi_{Xt} + \partial_X ( Q U ) \right) \right) \mbox{d} X  
+\\ 
+& \quad - \left[U^2 \pp{L}{U} +\psi_t P  \pp{Q}{\psi_X} + P Q U \right]_{\mbox{boundary} } 
+\\
+ & 
+= \int \left(  - \mu U^2 + F_{pm}   \psi_t + P \left( \partial_t Q + \partial_X ( Q U ) \right) \right) \mbox{d} X 
+ - \left[U^2 \pp{L}{U} +\psi_t P  \pp{Q}{\psi_X} + P Q U \right]_{\mbox{boundary} } 
+\\ 
+&\int \left(  - \mu U^2 + F_{pm}   \psi_t \right) \mbox{d} X  - \left[U^2 \pp{L}{U} +\psi_t P  \pp{Q}{\psi_X} + P Q U \right]_{\mbox{boundary} } 
+\end{align*} 
+\todo{TF: Perhaps more compact notation for this derivation can be found \\ VP: Yes, we shall cut it for the paper, I just wanted to be precise here. }
+
+If we proceed according to the derivation of the calculation of the force of friction on the body in the body frame, we conclude that 
+\begin{equation} 
+F_{pm}=F_{\mbox{s,sp}}+F_{\mbox{s,sp}} =0 
+\label{Porous_media_force}
+\end{equation}
+Let us  assume that $F_{pm}= \mu U$, \emph{i.e.}, the force acting on the solid is the same in amplitude but opposite on direction, as acting on the fluid.
+\todo{\textcolor{blue}{FGB: It seems that writing the equality $F_{pm}= \mu U$ does not make much sense because that $F_{pm}$ is at $\psi(X)$ not at $X$ (as we see from the expression $\int F_{pm}\delta\psi dX$), i.e. $F_{pm}\in T_{\psi(X)} \mathcal{S}$, where $\mathcal{S}$ is the space. But $U(X)\in T_X \mathcal{B}_s$, where $\mathcal{B}_s$ is the reference space of the solid.\\
+In fact $F_{pm}=-F_v$ does not make sense because these are different geometric objects, what do you think?.} 
+\textcolor{red}{
+\todo{VP \& TF: Yes, it seems that the formulation of the friction in the spatial case may be better. The statement $F_{f} = -\mu U$ and $F_{pm}=0$ may make sense, as we discuss below, but only if one is careful about the geometric nature of $\mu$, and remembering that  $F_{pm}=0$ is formulated in different space than $F_f$ }
+}
+}
+
+If we also assume, for example, $\psi=$const on the boundary (fixed boundary position) and $U=0$ (no fluid moving through the boundary),  we obtain the equation for rate of change for the energy 
+\begin{equation} 
+\dot E = - \int \mu U^2 \mbox{d} X \leq 0 
+\label{Edot_porous}
+\end{equation} 
+\todo{VP: This is accomplished by computing the Lagrange-d'Alembert's principle in spatial frame and transferring them into the body frame}
+
+\color{blue}
+\begin{framed} FGB: One way to incorporate the Darcy forces as internal processes, is to consider the thermodynamic effects.
+With $S_f(A)$ and $S_s(X)$ the entropies of the fluid and solid, and $T_f$, $T_s$ their temperature, we have the following variational principle from  my papers with Hiro (which here simplifies if we do not consider heat transfer between fluid and solid, no viscosity, not heat conduction, but we can if we want)
+\[
+\delta\int_0^T \mathsf{L} (\psi, \dot \psi, \phi,\dot\phi, S_f,S_s)  dt =0
+\]
+with constraints on variations
+\[
+\frac{\delta \mathsf{L}}{\delta S_f}\delta S_f = \mathsf{F}_\phi \delta \phi ,\qquad
+\frac{\delta \mathsf{L}}{\delta S_s}\delta S_s = \mathsf{F}_\psi \delta \psi 
+\]
+and constraints on the curves
+\[
+\frac{\delta \mathsf{L}}{\delta S_f}\dot S_f = \mathsf{F}_\phi \dot \phi ,\qquad
+\frac{\delta \mathsf{L}}{\delta S_s}\dot S_s = \mathsf{F}_\psi \dot \psi
+\]
+We get
+\[
+\frac{d}{dt}\frac{\partial\mathsf{L}}{\partial \dot \psi} - \frac{\partial\mathsf{L}}{\partial  \psi}=F_\psi
+,\qquad \frac{d}{dt}\frac{\partial\mathsf{L}}{\partial \dot \phi} - \frac{\partial\mathsf{L}}{\partial  \phi}=F_\phi
+\]
+\[
+T_f\dot S_f = - \mathsf{F}_\phi \dot \phi ,\qquad T_s\dot S_s = - \mathsf{F}_\psi \dot \psi
+\]
+
+Without entering into the details, there is a spatial version of the principle, which yields the entropy equations
+\[
+T_f (\partial _ts_f+ \operatorname{div}(s_fu_f))= \mathsf{f}_f\cdot u _f \qquad T_s (\partial _ts_s+ \operatorname{div}(s_su_s))= \mathsf{f}_s\cdot u _s
+\]
+\todo{\textcolor{red}{VP \& TF: If there is exchange of heat between the solid and the fluid, will it be something like 
+\[
+T_f (\partial _t s_f+ \operatorname{div}(s_fu_f))= \mathsf{f}_f\cdot u _f + \kappa (T_s-T_f) 
+\qquad T_s (\partial _ts_s+ \operatorname{div}(s_su_s))= \mathsf{f}_s\cdot u _s- \kappa (T_s-T_f) 
+\]
+We have slightly modified equation for total entropy below. 
+}
+}
+We suppose $\mathsf{f}_s= -\mathsf{f}_f$ (conservation of the total momentum), and the total entropy $s:=s_f+s_s$ verifies
+\[
+\partial _ts+ \operatorname{div}(s_fu_f+s_su_s) = \mathsf{f}_f\cdot \left(\frac{u_f}{T_f}- \frac{u_s}{T_s}\right) \textcolor{red}{+\kappa \left( \frac{T_s}{T_f}+\frac{T_f}{T_s}-2 \right)
+=
+\mathsf{f}_f\cdot \left(\frac{u_f}{T_f}- \frac{u_s}{T_s}\right) + \frac{(T_s-T_f)^2}{T_s T_f} 
+} 
+\]
+From the second law the entropy must increase, this naturally yields the choice
+\[
+\mathsf{f}_f = \lambda \left(\frac{u_f}{T_f}- \frac{u_s}{T_s}\right)
+\]
+for $\lambda\geq 0$. This recovers the Darcy law $\mathsf{f}_f = \lambda \left(u_f - u_s\right)$, if $T_s=T_f$.
+\textcolor{red}{ 
+\todo{VP \& TF: 
+In general case, we can have 
+\[
+\mathbf{f}_f = \mathbb{K}_s \left(\frac{\mathbf{u}_f}{T_f}- \frac{\mathbf{u}_s}{T_s}\right)
+\]
+} 
+} 
+The total energy however is preserved
+\[
+\frac{d}{dt} E_{\rm tot}=0
+\]
+This approach needs to consider the internal energies $\varepsilon_f(g,s_f)$ and $\varepsilon _s(\rho_s,s_s)$ of the fluid and solid, in the Lagrangian.
+\end{framed}
+\todo{FGB: I stopped here.}
+\color{red} 
+\todo{VP \& TF: 
+The new terms proportional to $T_f-T_s$ do not contribute to linear stability if the initial velocity is zero. However, we should make a stability analysis for the case when in the equilibrium state, $\mathbf{U}=\mathbf{U_0}+ \epsilon \mathbf{U}_1$, $T_f =T_0+ \epsilon T_{f,1}$, $T_s=T_0 + \epsilon T_{s,1}$ and expand around that state. Then, there are terms like 
+\[ 
+\pp{\mathbb{K}}{b} b_1 \mathbf{U}_0 + \mathbb{K} \mathbf{U}_0 \left(T_{f,1}-T_{s,1} \right) + \ldots 
+\] 
+This can lead to an instability since a system with $\mathbf{U}_0 \neq 0$ is not closed: there is force applied at the boundaries and mass is coming in too. Thus, there may be interesting instabilities. For now, Tagir will re-compute our wave propagation/dispersion relation for the steady state case as well and make sure the results agree. People in PDEs will like this representation more than our original one. 
+} 
+
+\color{black}
+
+\subsection{Derivation of equations in 3D} 
+\label{sec:3D_eqs} 
+The derivation of equations of motion in three dimensions follows the previous derivation in 1D, with the natural extension into three-dimensional coordinates. We define the following variables: 
+\begin{enumerate} 
+\setlength{\itemsep}{0pt} 
+\item The motion of porous media is defined by embeddings in $\mathbb{R}^3$, namely 
+$\bx=\bpsi(\bX,t)$ 
+\item The motion of fluid particles starting at the material point $\bA$ at the elastic media is given by $\bX=\bvarphi(\bA,t)$
+
+\item The porosity of the point $\bX$ is given by $f(\bX,t)$. The porosity can depend on the deformations and other variables, for compactness of notation, we drop the dependence of $f$ on these variables. 
+\item Conservation law of fluid is given by 
+\begin{equation} 
+\label{cons_law}
+Q_0 \circ \bvarphi^{-1} (\bX,t) |\nabla_{\bX} \bvarphi^{-1}(\bX,t)| = Q(\bX,t), 
+\mbox{ with } Q=f(\nabla_{\bX} \bpsi) |\nabla_{\bX} \bpsi|
+\end{equation} 
+\item Fluid velocity relative to the body is given by $\bU=\dot \bvarphi \circ \bvarphi^{-1}(\bX,t)$ 
+\item Fluid velocity in spatial frame is 
+\begin{equation} 
+\label{u_spatial} 
+\bu(\bX,t)=\pp{\bx_f}{t} \circ \bvarphi^{-1} (\bX,t) 
+= \pp{\bpsi \circ \bvarphi }{t} \circ \bvarphi^{-1} (X,t) 
+=   \bpsi_t + \bU \cdot \nabla_{\bX}  \bpsi \, . 
+\end{equation} 
+\item Variations in $\bU$ are computed through the formula 
+\begin{equation} 
+\de \bU = \boldeta_t + \bU  \cdot \nabla_{\bX} \boldeta - 
+\boldeta \cdot  \nabla_{\bX} \bU \, , \mbox{ with } \boldeta=\de \bvarphi \circ \bvarphi^{-1}
+\label{U_var} 
+\end{equation} 
+\item Lagrangian includes the kinetic energy of the elastic media and the fluid, potential energy of deformations and the potential energy of the  external forces applied to the elastic media $L=L( \bpsi,\nabla_{\bX},\bpsi_t, \bU)$ 
+\item  Friction forces in the spatial frame acting on the fluid and the media $\bF_{\mbox{fluid,s}}=-\mathbb{K} (\bu-\dot \bpsi)$, 
+$\bF_{\mbox{media,s}}=\mathbb{K} (\bu-\dot \bpsi)$. In the elastic body frame, the friction force acting on the media vanishes, and the friction force acting on the body is given by $\bF_{\mbox{fluid,s}}=-\mathbb{K} \bU $. 
+\end{enumerate} 
+
+With these notations, the equations of motion are obtained through the variational principle with Lagrange-d'Alembert's addition of the friction forces acting on the fluid 
+\begin{equation} 
+\begin{aligned} 
+\de \int \CL &(\dot \bpsi, \nabla_{\bX} \bpsi, \bpsi, \bU, \bX, t) 
+\\
+&
+- P \left(  Q_0 \circ \bvarphi^{-1} (\bX,t) |\nabla_{\bX} \bvarphi^{-1}(\bX,t)| - Q(\bX,t),\right) \mbox{d} \bX \mbox{d} t 
+=
+ \int \mathbf{F}_f \cdot \boldeta 
+\end{aligned} 
+\label{var_principle_3D} 
+\end{equation} 
+The variational principle gives equations of motion 
+\begin{equation} 
+\left\{ 
+\begin{aligned} 
+& \partial_t \pp{\CL}{\bU} + \bU \cdot \nabla_{\bX} \pp{\CL}{\bU}  +  \pp{\CL}{\bU} \cdot \nabla_{\bX}  \bU
++ \pp{\CL}{\bU^j} \nabla_{\bX}  \bU^j
+= - Q \pp{P}{\bX} - \mathbb{K} \bU  +  \mathbf{F}_{\rm f} 
+\\ 
+& \partial_t \pp{\CL}{\bpsi_t} + {\rm DIV} \left( \pp{\CL}{\nabla_{\bX}  \bpsi} + P \pp{Q}{ \nabla_{\bX}  \bpsi} \right) - 
+\pp{\CL}{\bpsi} 
+= \mathbf{F}_{\rm pm} 
+\\ 
+& Q_t +{\rm DIV} (Q \bU) =0\, , 
+\quad Q:= f(\nabla_{\bX} \bpsi,\bX,t) {\rm det} \left(\nabla_{\bX}  \bpsi \right)  
+\end{aligned}  
+\right. 
+\label{eqs_full_3D} 
+\end{equation} 
+\todo{TF: It seems that $F_{pm}$ is omitted in variational principle above. Again I have concerns about signs in RHS. \\ 
+VP: In the derivation, I assumed that $F_{pm}=0$: the force coming from the friction forcing acting on the media, in the frame of reference of the media, vanishes. Of course you are correct in general if there are other forces, which is the case for the muscle.  The signs of friction forces are OK.  }
+
+\color{black} 
+where $\mathbf{F}_{\rm f}$ and $\mathbf{F}_{\rm pm}$ are forces acting on the fluid and the porous media, respectively, and ${\rm DIV}$ is the divergence in $\bX$ variables. 
+\color{magenta} 
+In what follows, we consider the following Lagrangian utilizing kinetic energy of fluid and the media, as well as the energy of elastic deformations 
+\begin{equation} 
+\label{Lagr_full} 
+\CL=\frac{1}{2} \int \rho Q | \mathbf{u} |^2 + \alpha (Q_*-Q) |\dot \bpsi|^2 - \mathbb{J} \left( \nabla_{\bX} \bpsi - {\rm Id} \right): \left( \nabla_{\bX} \bpsi - {\rm Id} \right)  
+\mbox{d}X\ \mbox{d}t 
+\end{equation} 
+\color{black} 
+\todo{
+VP: Write system of equations using 
+\[ \mathbf{m}=\frac{1}{Q} \dede{\CL}{\bU}
+\]
+TF: Partial derivatives and variational derivatives coincide in this case?\newline
+VP: Yes, indeed. They would not coinside if you had, for example, $\CL=\int L(\bU, \nabla \bU, \ldots)$. 
+\\
+VP: I get for the fluid equation 
+\begin{equation} 
+\begin{aligned} 
+\label{m_eq_fluid} 
+\pp{\mathbf{m}}{t} & + (\bU\cdot \nabla_{\bX} ) \mathbf{m} + (\mathbf{m} \cdot \nabla_{\bX}) \bU  \\ 
+&+ \mathbf{m} {\rm DIV} \bU - \mathbf{m}_j \nabla_{\bX} \bU^j = 
+- \nabla_{\bX} P - \frac{\mathbb{K}}{Q} \bU 
+\end{aligned} 
+\end{equation} 
+The last two terms on LHS cancel in 1D, but not in 3D. 
+\newline
+TF: Need to check signs of the first two terms on the last line as here they do not coincide with drafts, probably equal sign should be shifted to the beginning of the last line}
+\todo{VP: 
+For sponges, assume spherical symmetry. Derive equations of motion in radial coordinates. It is useful to use e.g. 
+$\mathbf{F}(\bX) = f(X) \bX$, $\mathbf{G}(\bX) = g(X) \bX$, $X=|\bX|$, then e.g. 
+\[ 
+\begin{aligned}
+\mathbf{F}_j \nabla_{\bX} \mathbf{G}^j & = f(X) \bX \big( \nabla_{\bX} g(X) \bX \big)^T \\ 
+& = f(X) \big( g(X) {\rm Id}+ \frac{g'(X)}{X} \bX \otimes \bX \big)^T = 
+f(X) \bX \frac{d}{d X}\big( X g(X) \big) 
+\end{aligned} 
+\] 
+TF: maybe some issues with the notation (hat vs abs)
+\newline
+If we take $Q=Q(\bpsi_X)$, with $X=|\bX|$, and assume $\bpsi_X=A(t) \bX$ with $A(0)=1$, then there seem to be nice equations. 
+For example, 
+$\bU=U_0(t) \bX$ (neglecting the term $1/X^2$ in $\bU$) 
+\\
+The term in $P=P_0+P_1 X + P_2 X^2 + \ldots$ is chosen sp $P_0$ cancels $1/X$ singularity in elastic equation from ${\rm DIV}$. Then, $\mathbf{m}$ is also a polynomial in $\bX$ 
+\\ 
+I assumed that the force of the muscle is constant (independent of $X$) but it could also be a polynomial. 
+\\ 
+For particular solutions, let us take the Lagrangian 
+\[ 
+\CL=\frac{1}{2} \int \rho Q | \mathbf{u} |^2 + \alpha (Q_*-Q) |\dot \bpsi|^2 - \mathbb{J} \left( \nabla_{\bX} \bpsi - {\rm Id} \right): \left( \nabla_{\bX} \bpsi - {\rm Id} \right) \textcolor{cyan}{dX\ dt}
+\] 
+where $\rho$ is the density of fluid and $\alpha$ is the density of matrix, and $Q_*$ is the total porosity (e.g. 1). We can take anything else isotropic in $\mathbb{J}$, for example, take $\mathbb{J}=J {\rm Id}$. More precisely, we can take $\mathbb{F}=\nabla_{\bX} \bpsi$ and compute kinetic energy based on eigenvalues of tensors $\mathbb{F}^T \mathbb{F}$ or $\mathbb{F} \mathbb{F}^T$. Let us take simply a quadratic dependence on $\Psi_X$. 
+}
+
+
+
+
+Let us now investigate reduced cases of interest to applications. One possible simplification of \eqref{eqs_full_3D} happens when the kinetic energy of the fluid's motion is neglected: 
+\begin{equation} 
+\pp{\CL}{\bU}=\mathbf{0} \, . 
+\label{neglect_KE_fluid}
+\end{equation} 
+This approximation is possible when the relative velocities of the fluid are small compared to the motion of the elastic media. In that case, $\bu \simeq \dot \bpsi$ and the Lagrangian \eqref{Lagr_full} simplifies to 
+\begin{equation} 
+\label{Lagr_no_U}
+\CL \simeq \CL_1=\frac{1}{2} \int \left( \rho Q +  \alpha (Q_*-Q) \right) |\dot \bpsi|^2 - \mathbb{J} \left( \nabla_{\bX} \bpsi - {\rm Id} \right): \left( \nabla_{\bX} \bpsi - {\rm Id} \right)  dX\ dt 
+\end{equation} 
+In a more drastic simplification of the Lagrangian, all kinetic energy is neglected, in which case \eqref{Lagr_full} reduces to just the potential energy of elastic deformation. 
+\begin{equation} 
+\label{Lagr_no_KE}
+\CL \simeq \CL_2=\frac{1}{2} \int -\mathbb{J} \left( \nabla_{\bX} \bpsi - {\rm Id} \right): \left( \nabla_{\bX} \bpsi - {\rm Id} \right)  dX\ dt 
+\end{equation} 
+\todo{VP: The approximation \eqref{Lagr_no_U} seems inconsistent to me. While it is possible formally, neglecting the motion of the fluid while keeping the motion of the elastic body does not seem to represent physically realizable system. The approximation \eqref{Lagr_no_KE} is probably more consistent for slow motions. In what follows, I will focus on that approximation} 
+Let us consider the approximation \eqref{Lagr_no_KE} in more details. We shall also assume that the elastic media is isotropic and uniform, and obeys the linear elasticity laws. Defining deformations $\mathbf{v}=\bpsi - \bX$, and the tensor of deformations $\epsilon=\nabla_{\bX}\mathbf{v}$, we have the connection between the deformation tensor $\epsilon$ and stress tensor $\sigma$
+\begin{equation} 
+\epsilon=\frac{1}{2}\lp \pp{\mathbf{v}}{\bX} + \lp\pp{\mathbf{v}}{\bX}\rp^T \rp = \textcolor{red}{\frac{1+\nu}{E}   \sigma - \frac{\nu}{E}  \,  {\rm tr} \sigma {\rm Id}} 
+\label{epsilon_def_3D} 
+\end{equation}  
+where $E$ is the Young's modulus and $\nu$ is the Poisson ratio. 
+Alternatively, we can use the Lam\'e's coefficients $\lambda$ and $\mu$ 
+\begin{equation} 
+\sigma= \lambda \ {\rm I} \ {\rm tr} \epsilon + 2 \mu \epsilon, \quad \epsilon=\alpha_1 \sigma + \alpha_2 {\rm tr} \sigma  \, , \quad 
+\lambda = E \frac{\nu}{(1+ \nu)(1 - 2 \nu)} , \quad 
+\mu=E \frac{1}{2 (1+ \nu)} \, , 
+\label{epsilon_Lame} 
+\end{equation} 
+We shall use \eqref{epsilon_def_3D} in what follows. 
+Then, the Lagrangian is $\CL_2 = -\frac{1}{2} \int \epsilon : \sigma \mbox{d} X \, \mbox{d} t $. Assuming $\mathbb{K} = \frac{\mu} Q  {\rm Id}$ and no external force acting on the fluid, we obtain a reduction of  \eqref{eqs_full_3D} as follows:  
+\begin{equation} 
+\left\{ 
+\begin{aligned} 
+& 
+ \bU  =- \mu \pp{P}{\bX}  \\ 
+&  {\rm DIV} \left( \sigma + P \mathbb{M} \right)  
+= \mathbf{F}_{\rm pm} \, , \quad \mathbb{M} =  \pp{Q}{ \nabla_{\bX}  \bpsi} 
+\\ 
+& Q_t +{\rm DIV} (Q \bU) =0\, , 
+\quad Q:= Q(\epsilon) 
+\end{aligned}  
+\right. 
+\label{eqs_full_3D_simple} 
+\end{equation} 
+These equations can be reduced to a set of coupled PDEs for deformations and pressure as 
+\begin{equation} 
+\left\{ 
+\begin{aligned} 
+& 
+  {\rm DIV} \left( \sigma + P \mathbb{M} \right)  
+= \mathbf{F}_{\rm pm} \, , \quad \mathbb{M} =  \pp{Q}{ \nabla_{\bX}  \bpsi} 
+\\ 
+& Q_t ={\rm DIV} \big(Q \mu \nabla_{\bX} P \big)  \, , 
+\quad Q:= Q\big(\epsilon(\sigma) \big) 
+\end{aligned}  
+\right. 
+\label{eqs_full_3D_simple2} 
+\end{equation} 
+We can define the new 'effective' stress tensor  $\sigma_P$ according to 
+\begin{equation} 
+\label{sigma_P} 
+\sigma_P=\sigma + P \mathbb{M}\, ,  \quad \sigma = \sigma_P - P \mathbb{M} \,, \quad {\rm DIV} \sigma_P=\mathbf{F}_{\rm pm}  
+\, . 
+\end{equation} 
+In the simplest case, we can assume that $\mathbb{M}=$const, and only treat relatively small deformations from equlibrium, when the porosity function $Q$ remains approximately linear in deformations, $Q=Q_0 +\mathbb{M} : \epsilon$. Then, using \eqref{sigma_P} and \eqref{epsilon_def_3D}, the equations for porous media are 
+\begin{equation} 
+\left\{ 
+\begin{aligned} 
+& 
+  {\rm DIV} \sigma_P 
+= \mathbf{F}_{\rm pm}  \\ 
+& Q_t ={\rm DIV} \big(Q \mu \nabla_{\bX} P \big)  
+\\ 
+& \textcolor{red}{Q= Q_0 + \frac{1}{E} \mathbb{M} : \big( (1+\nu)\sigma_P - \nu {\rm Id} \ {\rm tr} \sigma_P \big) + 
+\frac{1}{E} P \big( (1+\nu)\mathbb{M}: \mathbb{M} -  \nu   ({\rm tr} \mathbb{M})^2  \big) 
+}
+\end{aligned}  
+\right. 
+\label{eqs_full_3D_simple3} 
+\end{equation} 
+Here, we denoted $\mathbb{M} : \mathbb{M} = \sum_{i,j} M_{ij}^2$. If $\mathbb{M}$ is a $3 \times 3$ diagonal matrix, $\mathbb{M}=\alpha {\rm Id}$, and $\mathbb{M} : \mathbb{M}=3 \alpha^2$, $\mathbb{M}: {\rm I}=3 \alpha$, $\mathbb{M} : \sigma_P= \alpha {\rm tr} \sigma_P$.  Then, the last equation of \eqref{eqs_full_3D_simple3} for porosity function $Q$ reduces to the Biot-Willis assumption for porosity 
+\todo{VP: Verify coefficients below. } 
+\begin{equation} 
+\label{porosity_func} 
+\textcolor{red}{
+Q=Q_0 +  \frac{1-2 \nu}{E} \left[ \alpha  {\rm tr} \sigma_P + 3 \alpha^2 P \right] := Q_0 + \kappa_\sigma {\rm tr} \sigma_P + \kappa_P P 
+}
+\end{equation} 
+However, when $\mathbb{M}$ is not diagonal, there are other terms in the equation \eqref{eqs_full_3D_simple3}. As far as we are aware, these terms have not been studies in the previous works on poromechanics. We shall explore the precise nature of these terms for the reduced model of a two-dimensional motion. 
+
+\todo{
+TF: It seems that in the last eq of \eqref{eqs_full_3D_simple3}
+should be minus before the second term in RHS. Then I believe \eqref{porosity_func} 
+\[
+Q=Q_0 +  \frac{1+\nu}{E}  (1- 3 \nu) \alpha \left[ {\rm tr} \sigma_P - 3\alpha  P \right] := Q_0 + \kappa_\sigma {\rm tr} \sigma_P \pm \kappa_P P
+\]
+VP - for Tagir: Rewrite equations \eqref{eqs_full_3D_simple3} in spherical coordinates for calculations of sponges. Then, take $F_{\rm pm}$ to be a  function acting in the radial direction, in the simplest case $F_{\pm}=T \widehat{r}$, assume that only $\sigma_rr$ and $\epsilon_rr$ are not zero, rewrite \eqref{eqs_full_3D_simple3} with some assumptions on $\mathbb{M}$ as PDEs. 
+\newline TF: What I got here is assuming $\sigma_P = \sigma_{P}^{rr}$ and linearity as above
+\[
+\frac{1}{r^2} \frac{\partial (r^2 \sigma_P)}{\partial r} = T
+\]
+\[
+Q_t = \mu \div(QP_r \hat{r}) = \mu(QP_r+Q_rP_r + 2QP_r/r)
+\]
+\[Q = Q_0 + 3\kappa_\sigma \sigma_P \pm \kappa_P P \]
+which can be also rewritten using \eqref{porosity_func}  as below.
+($\pm$ depends on how we define the sign of $\kappa_P.$ If we want it to be positive, then it should be minus.)
+\[\frac{\partial \sigma_P}{\partial r}+ 2\sigma_P/r = T\]
+\[\pm\kappa_P \dot{P} = -3\kappa_\sigma \dot{\sigma}_P + 
+\mu\left(Q(P_r + P_{rr}/r) \pm \kappa_P P_r^2 + 3\kappa_\sigma P_r  \frac{\partial \sigma_P}{\partial r} \right)
+\] 
+\[Q = Q_0 + 3\kappa_\sigma \sigma_P \pm \kappa_P P \]} 
+
+\subsection{Inertial terms and wave propagation} 
+Let us now show how to proceed with the computation of wave propagation in the porous media. Consider the Lagrangian 
+\eqref{Lagr_no_U}. In that case, assuming no external forces, equations \eqref{eqs_full_3D}  take the form 
+\begin{equation} 
+\textcolor{red}{
+\left\{ 
+\begin{aligned} 
+& \partial_t \left( \alpha+ \rho Q \right) \bpsi_t  + {\rm DIV} \left( - \sigma+ P \mathbb{M}  \right) =\mathbf{0} 
+\\ 
+& Q_t = {\rm DIV} \left( \mathbb{V} \nabla_{\bX} P \right) \, , 
+\quad Q:= Q_0 + \mathbb{M}: \epsilon \, , \quad \epsilon = \epsilon(\sigma) 
+\end{aligned}  
+\right. 
+}
+\label{eqs_full_3D_inertia} 
+\end{equation} 
+Let us proceed by assuming $\bpsi= \bX+\mathbf{v}$, with $\mathbf{v}$ being small, and posit $\mathbf{v} \rightarrow \mathbf{v} e^{- i \omega t + \mathbf{k} \cdot \mathbf{X}}$. The equations of motion \eqref{eqs_full_3D_inertia} become 
+\color{red}
+\[
+\left\{ 
+\begin{aligned} 
+& \partial_t [(\alpha+ \rho Q) \mathbf{v}_t]  + {\rm DIV} \left( - \sigma+ P \mathbb{M}  \right) =\mathbf{0}
+\\ 
+& Q_t = \mu{\rm DIV} \left(Q \nabla_{\bX} P \right) \, , 
+\quad Q:= Q_0 + \mathbb{M}: \epsilon \, , \quad \epsilon = \epsilon(\sigma) 
+\end{aligned}  
+\right. 
+\]
+Assume $\mathbf{v} \rightarrow \mathbf{v} e^{-i(\omega t - \mathbf{k\cdot X})},$ $P \rightarrow P e^{-i(\omega t - \mathbf{k\cdot X})}$ then
+\begin{equation} 
+\epsilon = \frac{ie^{-i(\omega t - \mathbf{k\cdot X})}}{2}(\mathbf{v\otimes k + k\otimes v}) = \frac{1+\nu}{E}\sigma - \frac{\nu}{E} \,  {\rm Id} \,  {\rm tr} \sigma
+\label{epsilon_disturbances}
+\end{equation} 
+The inversion of \eqref{epsilon_disturbances} in 3D gives 
+\begin{equation} 
+\sigma = \frac{E}{1+\nu}\left(\epsilon + \frac{\nu}{1-2\nu} {\rm Id} {\rm tr} \epsilon \right) = 
+ \frac{ie^{-i(\omega t - \mathbf{k\cdot X})}E}{2(1+\nu)}\left(\mathbf{v\otimes k + k\otimes v} + {\rm Id}\frac{\nu( \mathbf{vk})}{1-2\nu} \right)
+ \label{sigma_dist} 
+\end{equation} 
+Linearized equations become
+\[
+\left\{ 
+\begin{aligned} 
+& -\omega^2(\alpha+ \rho Q_0)\mathbf{v} +  e^{+i(\omega t - \mathbf{k\cdot X})} {\rm DIV} \left( - \sigma+ P \mathbb{M}e^{-i(\omega t - \mathbf{k\cdot X})}  \right) =\mathbf{0}
+\\ 
+& (\mathbb{M}: \epsilon)_t e^{+i(\omega t - \mathbf{k\cdot X})} =\frac{\omega}{2}\mathbb{M}:(\mathbf{v\otimes k + k\otimes v})= -  E \left< \mathbb{V}_0 \mathbf{k}, \mathbf{k} \right>  \, , 
+\quad \epsilon = \epsilon(\sigma) 
+\end{aligned}  
+\right. 
+\]
+The second equation can be written in the form 
+\begin{equation} 
+\label{P_eq_lin}
+2 \mathbf{k}^T\mathbb{M}\mathbf{v} \omega = 
+-E \mathbf{k}^T\mathbb{V}_0\mathbf{k} P 
+\end{equation}
+Let us denote $\overline{\rho}=\alpha+ \rho Q_0$. 
+The first equation gives
+\begin{equation} 
+\label{v_P_eq_init} 
+\omega^2 \overline{\rho}\mathbf{v} =
+\left[\frac{E}{2(1+\nu)}\left(\mathbf{v\otimes k + k\otimes v} + {\rm Id}\frac{\nu( \mathbf{vk})}{1-2\nu} \right)+iP\mathbb{M}\right]\mathbf{k}
+\end{equation} 
+which simplifies to 
+\begin{equation} 
+\label{omega_P_eq} 
+\omega^2(\alpha+ \rho Q_0)\mathbf{v} =
+\frac{E}{2(1+\nu)}\left(\mathbf{|k|^2v} + \frac{1-\nu}{1-2\nu}\mathbf{(vk)k} \right)+iP\mathbb{M}\mathbf{k}
+\end{equation} 
+Expressing $P$ from \eqref{P_eq_lin} as a linear function of $\mathbf{v}$ gives 
+\begin{equation} 
+\omega^2 \overline{\rho} \mathbf{v} =
+\frac{E}{2(1+\nu)}\left(\mathbf{|k|^2v} + \frac{1-\nu}{1-2\nu}\mathbf{(vk)k} \right)
+-i \omega \frac{1}{ E \mathbf{k}^T\mathbb{V}_0\mathbf{k}}
+\left( \mathbb{M}\mathbf{k}\otimes \mathbb{M}\mathbf{k} \right)  \mathbf{v} 
+\end{equation} 
+Thus, $\omega$ are given as nonlinear eigenvalues of the matrix 
+\begin{equation} 
+{\rm det}| 
+\mathbb{N} (\omega, \mathbf{k} ) | =0 
+\label{disp_eq} 
+\end{equation} 
+where 
+\begin{equation}
+\mathbb{N}:= 
+\omega^2 \overline{\rho} {\rm Id} 
++i \omega 
+\frac{1}{ E \mathbf{k}^T\mathbb{V}_0\mathbf{k}}
+\left( \mathbb{M}\mathbf{k}\otimes \mathbb{M}\mathbf{k} \right)
+-
+\frac{E}{2(1+\nu)}\left( 
+|\mathbf{k}|^2 {\rm Id} 
++ 
+\frac{1-\nu}{1- 2 \nu} \mathbf{k} \otimes \mathbf{k} 
+\right) 
+\label{N_eq} 
+\end{equation}
+Suppose that $\mathbb{M}$ has all distinct eigenvalues $\mu_i$ with corresponding eigenvectors $\mathbf{u}_i$, with $|\mathbf{u}_i|=1$. Then, since $\mathbb{M}$ is symmetric and real, the eigenvectors are othrogonal. 
+
+Choose $i$ and take $\mathbf{k}$ to be parallel to the $i$-th eigenvector of $\mathbb{M}$, i.e. $\mathbb{M} \mathbf{k} = \mu_i k \mathbf{u}_i$, with $i=1,2$ or $1,2,3$, depending on the dimension on the space, and $k=|\mathbf{k}|$. 
+
+\paragraph{$P$-wave}. Suppose $\mathbf{v}$  is parallel to $\mathbf{k}$. Then $\mathbb{N} \mathbf{v}=\mathbf{0}$ iff 
+\begin{equation} 
+\label{P_wave_gen} 
+ \omega^2 \overline{\rho} 
+ +i \omega 
+\frac{\mu_i^2}{ E \mathbf{u}_i^T\mathbb{V}_0\mathbf{u}_i}
+- 
+\frac{E}{2(1+\nu)}\left( 
+\frac{2-3 \nu}{1- 2 \nu} 
+\right) k^2 
+=0 
+\end{equation} 
+This equation can be rewritten as 
+\begin{equation}
+\omega^2 + i \gamma_i \omega - c^2 k^2 =0  \, , \quad 
+\gamma_i:= \frac{\mu_i^2}{ E \mathbf{u}_i^T\mathbb{V}_0\mathbf{u}_i}>0 \, ,
+\quad 
+c^2:= 
+\frac{E}{2(1+\nu)}\left( 
+\frac{2-3 \nu}{1- 2 \nu} 
+\right)
+\, . 
+\label{omega_P_wave}
+\end{equation} 
+Then, 
+\begin{equation}
+\omega=\frac{1}{2} 
+\left( - i \gamma \pm \sqrt{4 c^2 k^2 - \gamma_i^2}
+\right) \, . 
+\label{omega_pm}
+\end{equation}
+If the expression in the square root above is real, then clearly ${\rm Im} (\omega)<0$. On the other hand, if the expression under the square root is negative, the square root itself is not larger than $\gamma_i$ in the absolute value, so the expression for $\omega$ given by \eqref{omega_pm} has ${\rm Im} (\omega)\leq0$, with equality only being achieved when $k=0$. 
+\paragraph{$S$-wave}. Suppose $\mathbf{v}$  is normal to $\mathbf{u}_i$. For example, take $\mathbf{v} \parallel \mathbf{u}_j$, $j \neq i$. Then $\mathbb{N} \mathbf{v}=\mathbf{0}$ iff 
+\begin{equation} 
+ \omega^2 \overline{\rho} 
+- 
+\frac{E}{2(1+\nu)}k^2
+=0 
+\Rightarrow 
+\omega = \pm k \sqrt{ \frac{E}{2\overline{\rho}(1+ \nu)}}\, .  
+\end{equation} 
+\todo{VP: Please verify above.  Is it true? I get that S-waves experience no decay? That is very strange} 
+
+\paragraph{Cases of multiple eigenvalues} If the matrix $\mathbb{M}$ has an eigenspace with the same eigenvalue, but different eigenvectors, then both $P$- and $S$- waves experience dissipation. For example, if $\mathbb{M}=\alpha {\rm Id}$, then the equation for $P$-wave is 
+\begin{equation} 
+\label{P_wave_isotropic}
+ \omega^2 \overline{\rho} 
+ +i \omega 
+\frac{\alpha^2}{ E \mathbf{u}_i^T\mathbb{V}_0\mathbf{u}_i}
+- 
+\frac{E}{2(1+\nu)}\left( 
+\frac{2-3 \nu}{1- 2 \nu} 
+\right) k^2 
+=0 
+\end{equation} 
+and for the $S$-wave 
+\begin{equation} 
+ \omega^2 \overline{\rho} 
+ +i \omega 
+\frac{\alpha^2}{ E \mathbf{u}_i^T\mathbb{V}_0\mathbf{u}_i}
+- 
+\frac{E}{2(1+\nu)} k^2 
+=0 \label{S_wave_isotropic}
+\end{equation} 
+Here, $\mathbf{u}_i$ are chosen to be any orthornormal basis of the appropriate eignenspace. 
+\todo{VP: Strangely enough, there is dissipation in both waves}
+
+If the tensor $\mathbb{V}_0$ is proportional to the identity, say $\mathbb{V}_0=V {\rm Id}$, then both
+\eqref{P_wave_isotropic} and \eqref{S_wave_isotropic} can be written compactly as 
+\begin{equation}
+    \omega^2 + i \omega \gamma - c_{P,S}^2 k^2 =0 
+    \, , \quad 
+    c_P^2:=\frac{E}{2(1+\nu)}\left( 
+\frac{2-3 \nu}{1- 2 \nu} 
+\right) 
+\, , \quad 
+    c_S^2:=\frac{E}{2(1+\nu)}\,, 
+    \gamma:= \frac{\alpha^2}{EV}
+\end{equation}
+and the subscript $P$ or $S$ refers to either case. In both cases, ${\rm Im} \omega <0$ for all $k>0$ so the propagation of waves is strictly dissipative. 
+\todo{VP: For general $\mathbf{k}$ which is not necessarily parallel to any eigenvectors, I think the waves will be dissipative} 
+\rem{ %%%BEGIN REM 
+\color{blue} 
+The  substitution from the second equation gives
+\[
+\frac{\mu^2 Q_0^2P^2 |\mathbf{k}|^4}{q(\mathbf{v}^T\mathbb{M}\mathbf{k})^2}(\alpha+ \rho Q_0)\mathbf{v}
+=\frac{E}{2(1+\nu)}\left(\mathbf{|k|^2v} + \frac{1-\nu}{1-2\nu}\mathbf{(vk)k} \right)+iP\mathbb{M}\mathbf{k}
+\]
+\todo{VP: Compute the 4x4 matrix $\mathbb{A}(\omega,\mathbf{k})$ multiplying the vector $\mathbf{Y}=(\mathbf{v},P)$. Extract $P=P(\mathbf{v})$ and compute the matrix equation  $\mathbb{B}(\omega,\mathbf{k}) \mathbf{v}=\mathbf{0}$, where $\mathbb{B}$ is a 3x3 matrix. The dispersion relation is then ${\rm det} \mathbb{B}=0$, giving $\omega=\omega(\mathbf{k})$. There are presumably still $s$- and $p$-waves for $\mathbb{M}$ propotional to identity matrix. However, for general matrix $\mathbb{M}$ there is a mix-up of the components.  }
+In 3d $\mathbb{M}$ has at least one real eigenvalue. If it is degenerate, then $\mathbb{M}\mathbf{k} = M \mathbf{k},\ M=0$ for some $\mathbf{k}.$ Then either $\mathbf{(vk)=0}$ ($s-$wave) or $\mathbf{v} = q\mathbf{k}$ ($p-$waves, case below). 
+
+Now let consider only $p-$waves with $\mathbf{v} = q\mathbf{k}.$ Then $\mathbb{M}\mathbf{k} = M \mathbf{k},$ i.e. $\mathbf{k}$ should be an eigenvector. We have following relation which can be understood as an expression for $q=q(M,P,k).$
+\[
+\frac{\mu^2 Q_0^2P^2 |\mathbf{k}|^4}{q(\mathbf{k}^T\mathbb{M}\mathbf{k})^2}(\alpha+ \rho Q_0) =
+\frac{\mu^2 Q_0^2P^2} {qM^2}(\alpha+ \rho Q_0) =
+\frac{Eq}{2(1+\nu)} \frac{2-5\nu}{1-3\nu}\mathbf{|k|^2}+iPM
+\] 
+} 
+
+
+\end{document}
